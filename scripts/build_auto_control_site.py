@@ -1207,6 +1207,10 @@ def render_html(knowledge: list[dict[str, Any]], questions: list[dict[str, Any]]
     const clearSearch = document.getElementById('clearSearch');
     const matchCount = document.getElementById('matchCount');
     const searchable = Array.from(document.querySelectorAll('.searchable'));
+    function resolveHashTarget(hash) {{
+      if (!hash || !hash.startsWith('#')) return null;
+      return document.getElementById(decodeURIComponent(hash.slice(1)));
+    }}
     function applySearch() {{
       const q = searchInput.value.trim().toLowerCase();
       let visible = 0;
@@ -1218,22 +1222,31 @@ def render_html(knowledge: list[dict[str, Any]], questions: list[dict[str, Any]]
       }});
       matchCount.textContent = q ? `匹配 ${{visible}} 条` : '';
     }}
+    function handleHashNavigation(hash) {{
+      const target = resolveHashTarget(hash || location.hash);
+      if (!target) return;
+      if (searchInput.value) {{
+        searchInput.value = '';
+        applySearch();
+      }}
+      requestAnimationFrame(() => target.scrollIntoView({{ block: 'start', behavior: 'smooth' }}));
+    }}
     searchInput.addEventListener('input', applySearch);
     clearSearch.addEventListener('click', () => {{ searchInput.value = ''; applySearch(); }});
     document.querySelectorAll('aside a[href^="#"]').forEach((link) => {{
       link.addEventListener('click', (event) => {{
         const hash = link.getAttribute('href');
-        const target = hash && document.querySelector(hash);
+        const target = resolveHashTarget(hash);
         if (!target) return;
         event.preventDefault();
-        if (searchInput.value) {{
-          searchInput.value = '';
-          applySearch();
-        }}
         history.pushState(null, '', hash);
-        requestAnimationFrame(() => target.scrollIntoView({{ block: 'start', behavior: 'smooth' }}));
+        handleHashNavigation(hash);
       }});
     }});
+    window.addEventListener('hashchange', () => handleHashNavigation(location.hash));
+    if (location.hash) {{
+      handleHashNavigation(location.hash);
+    }}
 
     const thumbs = Array.from(document.querySelectorAll('.page-thumb'));
     const modal = document.getElementById('imageModal');
