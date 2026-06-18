@@ -10,6 +10,7 @@ from pathlib import Path
 from typing import Any
 
 import fitz
+from PIL import Image, ImageDraw
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -91,6 +92,16 @@ def load_sources() -> list[Source]:
 def ensure_dirs() -> None:
     for directory in [TEXT_DIR, SOURCE_PAGE_DIR, HOMEWORK_PAGE_DIR, ANSWER_PAGE_DIR, DATA_DIR]:
         directory.mkdir(parents=True, exist_ok=True)
+
+
+def write_favicon() -> None:
+    icon_path = ROOT / "favicon.ico"
+    image = Image.new("RGBA", (32, 32), "#24362f")
+    draw = ImageDraw.Draw(image)
+    draw.rounded_rectangle((2, 2, 30, 30), radius=7, outline="#b8872c", width=2)
+    draw.line((7, 22, 13, 11, 18, 17, 24, 8), fill="#f7f3ea", width=3)
+    draw.ellipse((20, 5, 26, 11), fill="#a9422b")
+    image.save(icon_path, format="ICO")
 
 
 def normalize_text(text: str) -> str:
@@ -804,6 +815,7 @@ def render_html(knowledge: list[dict[str, Any]], questions: list[dict[str, Any]]
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>自动控制原理复习网站</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
   <style>
     :root {{
       --ink: #17201a;
@@ -1294,6 +1306,7 @@ def copy_raw_pdfs_for_traceability(sources: list[Source]) -> None:
 
 def main() -> None:
     ensure_dirs()
+    write_favicon()
     sources = load_sources()
     manifest = extract_text_and_manifest(sources)
     important, double_important = build_priority_pages()
