@@ -952,6 +952,7 @@ def render_html(knowledge: list[dict[str, Any]], questions: list[dict[str, Any]]
       padding: clamp(14px, 2vw, 22px);
       margin: 14px 0;
       box-shadow: 0 6px 20px rgba(37, 30, 18, 0.06);
+      scroll-margin-top: 14px;
     }}
     .card-head {{
       display: flex;
@@ -1158,7 +1159,7 @@ def render_html(knowledge: list[dict[str, Any]], questions: list[dict[str, Any]]
     <main>
       <header class="hero">
         <h1>自动控制原理复习网站</h1>
-        <p>根据本地讲义 PDF/PPT、作业安排和第三章手写参考页整理。页面保留原讲义截图，重点页使用红框，作业和参考答案截图尽量紧贴题目；没有官方答案的题目明确标注“待官方答案核对”。</p>
+        <p>根据本地讲义 PDF/PPT、作业安排和第三章参考答案整理。页面保留原讲义截图，重点页使用红框，作业和参考答案截图尽量紧贴题目；没有官方答案的题目明确标注“待官方答案核对”。</p>
       </header>
       <section class="stats">
         <div class="stat"><strong>{len(chapters)}</strong><span>章节入口</span></div>
@@ -1219,6 +1220,20 @@ def render_html(knowledge: list[dict[str, Any]], questions: list[dict[str, Any]]
     }}
     searchInput.addEventListener('input', applySearch);
     clearSearch.addEventListener('click', () => {{ searchInput.value = ''; applySearch(); }});
+    document.querySelectorAll('aside a[href^="#"]').forEach((link) => {{
+      link.addEventListener('click', (event) => {{
+        const hash = link.getAttribute('href');
+        const target = hash && document.querySelector(hash);
+        if (!target) return;
+        event.preventDefault();
+        if (searchInput.value) {{
+          searchInput.value = '';
+          applySearch();
+        }}
+        history.pushState(null, '', hash);
+        requestAnimationFrame(() => target.scrollIntoView({{ block: 'start', behavior: 'smooth' }}));
+      }});
+    }});
 
     const thumbs = Array.from(document.querySelectorAll('.page-thumb'));
     const modal = document.getElementById('imageModal');
