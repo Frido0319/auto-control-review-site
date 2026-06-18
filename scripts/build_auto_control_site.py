@@ -1229,7 +1229,12 @@ def render_html(knowledge: list[dict[str, Any]], questions: list[dict[str, Any]]
         searchInput.value = '';
         applySearch();
       }}
-      target.scrollIntoView({{ block: 'start', behavior: 'smooth' }});
+      const top = Math.max(0, target.getBoundingClientRect().top + window.scrollY - 12);
+      const root = document.documentElement;
+      const previous = root.style.scrollBehavior;
+      root.style.scrollBehavior = 'auto';
+      window.scrollTo({{ top, behavior: 'auto' }});
+      root.style.scrollBehavior = previous;
     }}
     searchInput.addEventListener('input', applySearch);
     clearSearch.addEventListener('click', () => {{ searchInput.value = ''; applySearch(); }});
