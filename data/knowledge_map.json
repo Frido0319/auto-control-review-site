@@ -1,0 +1,3663 @@
+[
+  {
+    "id": "k1_intro",
+    "chapter": "第一章 绪论",
+    "title": "自动控制系统的基本组成与反馈思想",
+    "beginner": "先把系统看成“比较目标和输出，再自动修正偏差”的闭环。能分清输入、输出、扰动、反馈、控制器和被控对象，是后面列传递函数与画框图的前置条件。",
+    "prerequisites": [
+      "函数与信号的输入输出关系",
+      "反馈的正负号",
+      "稳态与动态的直观含义"
+    ],
+    "must_know": [
+      "闭环控制的核心是用反馈量与给定量比较得到偏差，再由控制器产生控制作用。",
+      "评价控制系统通常看稳定性、快速性、准确性。",
+      "开环结构简单但抗扰能力弱；闭环能修正偏差，但必须额外关注稳定性。"
+    ],
+    "formulas": [],
+    "common_mistakes": [
+      "只背定义不看信号流向，导致后面方框图等效变换时符号出错。"
+    ],
+    "source_pages": [
+      {
+        "source_id": "src_016",
+        "source_title": "第1章 绪论",
+        "chapter": "第一章",
+        "role": "lecture",
+        "page": 1,
+        "image": "assets/source_pages/src_016_p001.png",
+        "important": false,
+        "double_important": false
+      },
+      {
+        "source_id": "src_016",
+        "source_title": "第1章 绪论",
+        "chapter": "第一章",
+        "role": "lecture",
+        "page": 4,
+        "image": "assets/source_pages/src_016_p004.png",
+        "important": false,
+        "double_important": false
+      },
+      {
+        "source_id": "src_016",
+        "source_title": "第1章 绪论",
+        "chapter": "第一章",
+        "role": "lecture",
+        "page": 5,
+        "image": "assets/source_pages/src_016_p005.png",
+        "important": false,
+        "double_important": false
+      },
+      {
+        "source_id": "src_016",
+        "source_title": "第1章 绪论",
+        "chapter": "第一章",
+        "role": "lecture",
+        "page": 6,
+        "image": "assets/source_pages/src_016_p006.png",
+        "important": false,
+        "double_important": false
+      },
+      {
+        "source_id": "src_016",
+        "source_title": "第1章 绪论",
+        "chapter": "第一章",
+        "role": "lecture",
+        "page": 7,
+        "image": "assets/source_pages/src_016_p007.png",
+        "important": false,
+        "double_important": false
+      },
+      {
+        "source_id": "src_016",
+        "source_title": "第1章 绪论",
+        "chapter": "第一章",
+        "role": "lecture",
+        "page": 8,
+        "image": "assets/source_pages/src_016_p008.png",
+        "important": false,
+        "double_important": false
+      },
+      {
+        "source_id": "src_016",
+        "source_title": "第1章 绪论",
+        "chapter": "第一章",
+        "role": "lecture",
+        "page": 9,
+        "image": "assets/source_pages/src_016_p009.png",
+        "important": false,
+        "double_important": false
+      }
+    ],
+    "related_homework": []
+  },
+  {
+    "id": "k2_laplace",
+    "chapter": "第二章 数学模型",
+    "title": "Laplace 变换与反变换",
+    "beginner": "第二章作业先考基本变换。要先熟悉常见函数的 Laplace 变换，再用线性性质、位移性质和部分分式展开做反变换。",
+    "prerequisites": [
+      "指数、三角函数基本形式",
+      "复数与极点",
+      "部分分式展开"
+    ],
+    "must_know": [
+      "微分方程可以通过 Laplace 变换转为代数方程。",
+      "反变换常用部分分式展开；遇到二阶因子时先配方，再对应衰减正弦/余弦。",
+      "初始条件会进入输出响应计算，不能默认全为零。"
+    ],
+    "formulas": [
+      "<div class=\"math-block\"><div>L{e^{-a t}} = 1 / (s + a)</div>\n<div>L{e^{-a t} cos wt} = (s + a) / ((s + a)^2 + w^2)</div>\n<div>L{e^{-a t} sin wt} = w / ((s + a)^2 + w^2)</div></div>"
+    ],
+    "common_mistakes": [
+      "把 s 平移写反，例如 e^{-a t} 对应 s+a，不是 s-a。"
+    ],
+    "source_pages": [
+      {
+        "source_id": "src_017",
+        "source_title": "第2章 数学模型",
+        "chapter": "第二章",
+        "role": "lecture",
+        "page": 1,
+        "image": "assets/source_pages/src_017_p001.png",
+        "important": false,
+        "double_important": false
+      },
+      {
+        "source_id": "src_017",
+        "source_title": "第2章 数学模型",
+        "chapter": "第二章",
+        "role": "lecture",
+        "page": 4,
+        "image": "assets/source_pages/src_017_p004.png",
+        "important": false,
+        "double_important": false
+      },
+      {
+        "source_id": "src_017",
+        "source_title": "第2章 数学模型",
+        "chapter": "第二章",
+        "role": "lecture",
+        "page": 5,
+        "image": "assets/source_pages/src_017_p005.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_017",
+        "source_title": "第2章 数学模型",
+        "chapter": "第二章",
+        "role": "lecture",
+        "page": 8,
+        "image": "assets/source_pages/src_017_p008.png",
+        "important": false,
+        "double_important": false
+      },
+      {
+        "source_id": "src_017",
+        "source_title": "第2章 数学模型",
+        "chapter": "第二章",
+        "role": "lecture",
+        "page": 9,
+        "image": "assets/source_pages/src_017_p009.png",
+        "important": false,
+        "double_important": false
+      },
+      {
+        "source_id": "src_017",
+        "source_title": "第2章 数学模型",
+        "chapter": "第二章",
+        "role": "lecture",
+        "page": 14,
+        "image": "assets/source_pages/src_017_p014.png",
+        "important": false,
+        "double_important": false
+      },
+      {
+        "source_id": "src_017",
+        "source_title": "第2章 数学模型",
+        "chapter": "第二章",
+        "role": "lecture",
+        "page": 18,
+        "image": "assets/source_pages/src_017_p018.png",
+        "important": false,
+        "double_important": false
+      }
+    ],
+    "related_homework": [
+      "HW2-2",
+      "HW2-6",
+      "HW2-7"
+    ]
+  },
+  {
+    "id": "k2_transfer",
+    "chapter": "第二章 数学模型",
+    "title": "传递函数、结构图与信号流图",
+    "beginner": "传递函数描述零初始条件下输出与输入的比值。框图化简和梅逊公式是把复杂连接关系转成闭环传递函数的工具。",
+    "prerequisites": [
+      "Laplace 变换",
+      "代数方程消元",
+      "负反馈公式"
+    ],
+    "must_know": [
+      "典型负反馈闭环传递函数：前向通道除以一加开环环路传递函数。",
+      "系统型别由开环传递函数中原点极点个数决定。",
+      "信号流图用前向通路、回路和不接触回路计算总传递函数。"
+    ],
+    "formulas": [
+      "<div class=\"math-block\"><div>Phi(s) = G(s) / (1 + G(s)H(s))</div>\n<div>Mason: T = sum(P_k Delta_k) / Delta</div></div>"
+    ],
+    "common_mistakes": [
+      "把闭环极点当成开环极点；判断稳定性应看闭环特征方程。"
+    ],
+    "source_pages": [
+      {
+        "source_id": "src_017",
+        "source_title": "第2章 数学模型",
+        "chapter": "第二章",
+        "role": "lecture",
+        "page": 22,
+        "image": "assets/source_pages/src_017_p022.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_017",
+        "source_title": "第2章 数学模型",
+        "chapter": "第二章",
+        "role": "lecture",
+        "page": 27,
+        "image": "assets/source_pages/src_017_p027.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_017",
+        "source_title": "第2章 数学模型",
+        "chapter": "第二章",
+        "role": "lecture",
+        "page": 32,
+        "image": "assets/source_pages/src_017_p032.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_017",
+        "source_title": "第2章 数学模型",
+        "chapter": "第二章",
+        "role": "lecture",
+        "page": 40,
+        "image": "assets/source_pages/src_017_p040.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_017",
+        "source_title": "第2章 数学模型",
+        "chapter": "第二章",
+        "role": "lecture",
+        "page": 45,
+        "image": "assets/source_pages/src_017_p045.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_017",
+        "source_title": "第2章 数学模型",
+        "chapter": "第二章",
+        "role": "lecture",
+        "page": 53,
+        "image": "assets/source_pages/src_017_p053.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_017",
+        "source_title": "第2章 数学模型",
+        "chapter": "第二章",
+        "role": "lecture",
+        "page": 62,
+        "image": "assets/source_pages/src_017_p062.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_017",
+        "source_title": "第2章 数学模型",
+        "chapter": "第二章",
+        "role": "lecture",
+        "page": 70,
+        "image": "assets/source_pages/src_017_p070.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_017",
+        "source_title": "第2章 数学模型",
+        "chapter": "第二章",
+        "role": "lecture",
+        "page": 76,
+        "image": "assets/source_pages/src_017_p076.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_017",
+        "source_title": "第2章 数学模型",
+        "chapter": "第二章",
+        "role": "lecture",
+        "page": 83,
+        "image": "assets/source_pages/src_017_p083.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_017",
+        "source_title": "第2章 数学模型",
+        "chapter": "第二章",
+        "role": "lecture",
+        "page": 89,
+        "image": "assets/source_pages/src_017_p089.png",
+        "important": true,
+        "double_important": false
+      }
+    ],
+    "related_homework": [
+      "HW2-8",
+      "HW2-11",
+      "HW2-12",
+      "HW2-14"
+    ]
+  },
+  {
+    "id": "k3_first_second_order",
+    "chapter": "第三章 时域分析",
+    "title": "一阶、二阶系统的时间响应指标",
+    "beginner": "第三章作业的核心是从响应曲线或传递函数读出自然频率、阻尼比、超调量、峰值时间和调节时间。",
+    "prerequisites": [
+      "传递函数",
+      "极点与响应形式",
+      "指数衰减与正弦振荡"
+    ],
+    "must_know": [
+      "标准二阶系统由自然频率和阻尼比决定动态性能。",
+      "欠阻尼时会出现超调和振荡；阻尼比越大，超调越小。",
+      "调节时间常按 5% 或 2% 误差带近似，做题时要看教材或题目约定。"
+    ],
+    "formulas": [
+      "<div class=\"math-block\"><div>G(s) = wn^2 / (s^2 + 2 zeta wn s + wn^2)</div>\n<div>wd = wn sqrt(1 - zeta^2)</div>\n<div>sigma% = exp(-zeta pi / sqrt(1 - zeta^2)) x 100%</div>\n<div>tp = pi / wd</div>\n<div>ts ≈ 3 / (zeta wn)  (5% criterion)</div></div>"
+    ],
+    "common_mistakes": [
+      "把阻尼振荡频率 wd 和自然频率 wn 混用。"
+    ],
+    "source_pages": [
+      {
+        "source_id": "src_018",
+        "source_title": "第3章 时域分析",
+        "chapter": "第三章",
+        "role": "lecture",
+        "page": 1,
+        "image": "assets/source_pages/src_018_p001.png",
+        "important": false,
+        "double_important": false
+      },
+      {
+        "source_id": "src_018",
+        "source_title": "第3章 时域分析",
+        "chapter": "第三章",
+        "role": "lecture",
+        "page": 2,
+        "image": "assets/source_pages/src_018_p002.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_018",
+        "source_title": "第3章 时域分析",
+        "chapter": "第三章",
+        "role": "lecture",
+        "page": 8,
+        "image": "assets/source_pages/src_018_p008.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_018",
+        "source_title": "第3章 时域分析",
+        "chapter": "第三章",
+        "role": "lecture",
+        "page": 11,
+        "image": "assets/source_pages/src_018_p011.png",
+        "important": false,
+        "double_important": false
+      },
+      {
+        "source_id": "src_018",
+        "source_title": "第3章 时域分析",
+        "chapter": "第三章",
+        "role": "lecture",
+        "page": 15,
+        "image": "assets/source_pages/src_018_p015.png",
+        "important": false,
+        "double_important": false
+      },
+      {
+        "source_id": "src_018",
+        "source_title": "第3章 时域分析",
+        "chapter": "第三章",
+        "role": "lecture",
+        "page": 19,
+        "image": "assets/source_pages/src_018_p019.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_018",
+        "source_title": "第3章 时域分析",
+        "chapter": "第三章",
+        "role": "lecture",
+        "page": 23,
+        "image": "assets/source_pages/src_018_p023.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_018",
+        "source_title": "第3章 时域分析",
+        "chapter": "第三章",
+        "role": "lecture",
+        "page": 28,
+        "image": "assets/source_pages/src_018_p028.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_018",
+        "source_title": "第3章 时域分析",
+        "chapter": "第三章",
+        "role": "lecture",
+        "page": 35,
+        "image": "assets/source_pages/src_018_p035.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_018",
+        "source_title": "第3章 时域分析",
+        "chapter": "第三章",
+        "role": "lecture",
+        "page": 43,
+        "image": "assets/source_pages/src_018_p043.png",
+        "important": true,
+        "double_important": false
+      }
+    ],
+    "related_homework": [
+      "HW3-1",
+      "HW3-2",
+      "HW3-3"
+    ]
+  },
+  {
+    "id": "k3_stability_error",
+    "chapter": "第三章 时域分析",
+    "title": "稳定性、劳斯判据与稳态误差",
+    "beginner": "稳定性看闭环极点是否都在左半平面；稳态误差看系统型别和静态误差系数。先会写闭环特征方程，再套劳斯表和终值定理。",
+    "prerequisites": [
+      "闭环特征方程",
+      "极点位置",
+      "终值定理"
+    ],
+    "must_know": [
+      "劳斯判据通过首列符号判断右半平面根个数。",
+      "稳态误差通常用终值定理计算，也可用位置、速度、加速度误差系数快速判断。",
+      "输入类型不同，稳态误差结论不同：阶跃、斜坡、抛物线不能混用。"
+    ],
+    "formulas": [
+      "<div class=\"math-block\"><div>ess = lim_{s -&gt; 0} s E(s)</div>\n<div>Kp = lim_{s -&gt; 0} G(s)H(s)</div>\n<div>Kv = lim_{s -&gt; 0} s G(s)H(s)</div>\n<div>Ka = lim_{s -&gt; 0} s^2 G(s)H(s)</div></div>"
+    ],
+    "common_mistakes": [
+      "用开环稳定替代闭环稳定；静态误差系数没有按系统型别判断。"
+    ],
+    "source_pages": [
+      {
+        "source_id": "src_018",
+        "source_title": "第3章 时域分析",
+        "chapter": "第三章",
+        "role": "lecture",
+        "page": 50,
+        "image": "assets/source_pages/src_018_p050.png",
+        "important": false,
+        "double_important": false
+      },
+      {
+        "source_id": "src_018",
+        "source_title": "第3章 时域分析",
+        "chapter": "第三章",
+        "role": "lecture",
+        "page": 58,
+        "image": "assets/source_pages/src_018_p058.png",
+        "important": false,
+        "double_important": false
+      },
+      {
+        "source_id": "src_018",
+        "source_title": "第3章 时域分析",
+        "chapter": "第三章",
+        "role": "lecture",
+        "page": 64,
+        "image": "assets/source_pages/src_018_p064.png",
+        "important": false,
+        "double_important": false
+      },
+      {
+        "source_id": "src_018",
+        "source_title": "第3章 时域分析",
+        "chapter": "第三章",
+        "role": "lecture",
+        "page": 73,
+        "image": "assets/source_pages/src_018_p073.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_018",
+        "source_title": "第3章 时域分析",
+        "chapter": "第三章",
+        "role": "lecture",
+        "page": 82,
+        "image": "assets/source_pages/src_018_p082.png",
+        "important": false,
+        "double_important": false
+      },
+      {
+        "source_id": "src_018",
+        "source_title": "第3章 时域分析",
+        "chapter": "第三章",
+        "role": "lecture",
+        "page": 91,
+        "image": "assets/source_pages/src_018_p091.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_018",
+        "source_title": "第3章 时域分析",
+        "chapter": "第三章",
+        "role": "lecture",
+        "page": 100,
+        "image": "assets/source_pages/src_018_p100.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_018",
+        "source_title": "第3章 时域分析",
+        "chapter": "第三章",
+        "role": "lecture",
+        "page": 105,
+        "image": "assets/source_pages/src_018_p105.png",
+        "important": false,
+        "double_important": false
+      }
+    ],
+    "related_homework": [
+      "HW3-4",
+      "HW3-5",
+      "HW3-6",
+      "HW3-7",
+      "HW3-8",
+      "HW3-9"
+    ]
+  },
+  {
+    "id": "k5_frequency",
+    "chapter": "第五章 频域分析",
+    "title": "频率特性、幅相曲线与 Bode 图",
+    "beginner": "频域分析把 s 换成 jw，研究不同频率正弦输入下系统输出幅值和相位如何变化。Bode 图本质是把幅频和相频用对数坐标画出来。",
+    "prerequisites": [
+      "复数模与幅角",
+      "传递函数",
+      "对数坐标和 dB"
+    ],
+    "must_know": [
+      "幅频特性是 |G(jw)|，相频特性是 angle G(jw)。",
+      "Bode 幅值图由低频基准线和各典型环节转折频率叠加得到。",
+      "积分环节给 -20 dB/dec 和 -90° 相位；一阶惯性环节过转折频率后斜率再降 -20 dB/dec。"
+    ],
+    "formulas": [
+      "<div class=\"math-block\"><div>G(jw) = G(s)|_{s = jw}</div>\n<div>L(w) = 20 log10 |G(jw)|</div></div>"
+    ],
+    "common_mistakes": [
+      "画 Bode 图时没有先化成尾 1 标准型，导致转折频率和增益错位。"
+    ],
+    "source_pages": [
+      {
+        "source_id": "src_003",
+        "source_title": "15 c5_1 频率特性",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 1,
+        "image": "assets/source_pages/src_003_p001.png",
+        "important": false,
+        "double_important": false
+      },
+      {
+        "source_id": "src_003",
+        "source_title": "15 c5_1 频率特性",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 2,
+        "image": "assets/source_pages/src_003_p002.png",
+        "important": false,
+        "double_important": false
+      },
+      {
+        "source_id": "src_003",
+        "source_title": "15 c5_1 频率特性",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 3,
+        "image": "assets/source_pages/src_003_p003.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_003",
+        "source_title": "15 c5_1 频率特性",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 4,
+        "image": "assets/source_pages/src_003_p004.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_003",
+        "source_title": "15 c5_1 频率特性",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 5,
+        "image": "assets/source_pages/src_003_p005.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_003",
+        "source_title": "15 c5_1 频率特性",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 6,
+        "image": "assets/source_pages/src_003_p006.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_003",
+        "source_title": "15 c5_1 频率特性",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 7,
+        "image": "assets/source_pages/src_003_p007.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_003",
+        "source_title": "15 c5_1 频率特性",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 8,
+        "image": "assets/source_pages/src_003_p008.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_003",
+        "source_title": "15 c5_1 频率特性",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 9,
+        "image": "assets/source_pages/src_003_p009.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_003",
+        "source_title": "15 c5_1 频率特性",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 10,
+        "image": "assets/source_pages/src_003_p010.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_003",
+        "source_title": "15 c5_1 频率特性",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 11,
+        "image": "assets/source_pages/src_003_p011.png",
+        "important": false,
+        "double_important": false
+      },
+      {
+        "source_id": "src_003",
+        "source_title": "15 c5_1 频率特性",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 12,
+        "image": "assets/source_pages/src_003_p012.png",
+        "important": false,
+        "double_important": false
+      },
+      {
+        "source_id": "src_003",
+        "source_title": "15 c5_1 频率特性",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 13,
+        "image": "assets/source_pages/src_003_p013.png",
+        "important": false,
+        "double_important": false
+      },
+      {
+        "source_id": "src_004",
+        "source_title": "16_1 c5_2 典型环节的幅相特性曲线",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 1,
+        "image": "assets/source_pages/src_004_p001.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_004",
+        "source_title": "16_1 c5_2 典型环节的幅相特性曲线",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 2,
+        "image": "assets/source_pages/src_004_p002.png",
+        "important": false,
+        "double_important": false
+      },
+      {
+        "source_id": "src_004",
+        "source_title": "16_1 c5_2 典型环节的幅相特性曲线",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 3,
+        "image": "assets/source_pages/src_004_p003.png",
+        "important": false,
+        "double_important": false
+      },
+      {
+        "source_id": "src_004",
+        "source_title": "16_1 c5_2 典型环节的幅相特性曲线",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 4,
+        "image": "assets/source_pages/src_004_p004.png",
+        "important": false,
+        "double_important": false
+      },
+      {
+        "source_id": "src_004",
+        "source_title": "16_1 c5_2 典型环节的幅相特性曲线",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 5,
+        "image": "assets/source_pages/src_004_p005.png",
+        "important": false,
+        "double_important": false
+      },
+      {
+        "source_id": "src_004",
+        "source_title": "16_1 c5_2 典型环节的幅相特性曲线",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 6,
+        "image": "assets/source_pages/src_004_p006.png",
+        "important": false,
+        "double_important": false
+      },
+      {
+        "source_id": "src_004",
+        "source_title": "16_1 c5_2 典型环节的幅相特性曲线",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 7,
+        "image": "assets/source_pages/src_004_p007.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_004",
+        "source_title": "16_1 c5_2 典型环节的幅相特性曲线",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 8,
+        "image": "assets/source_pages/src_004_p008.png",
+        "important": false,
+        "double_important": false
+      },
+      {
+        "source_id": "src_004",
+        "source_title": "16_1 c5_2 典型环节的幅相特性曲线",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 9,
+        "image": "assets/source_pages/src_004_p009.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_004",
+        "source_title": "16_1 c5_2 典型环节的幅相特性曲线",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 10,
+        "image": "assets/source_pages/src_004_p010.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_004",
+        "source_title": "16_1 c5_2 典型环节的幅相特性曲线",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 11,
+        "image": "assets/source_pages/src_004_p011.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_004",
+        "source_title": "16_1 c5_2 典型环节的幅相特性曲线",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 12,
+        "image": "assets/source_pages/src_004_p012.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_004",
+        "source_title": "16_1 c5_2 典型环节的幅相特性曲线",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 13,
+        "image": "assets/source_pages/src_004_p013.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_004",
+        "source_title": "16_1 c5_2 典型环节的幅相特性曲线",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 14,
+        "image": "assets/source_pages/src_004_p014.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_004",
+        "source_title": "16_1 c5_2 典型环节的幅相特性曲线",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 15,
+        "image": "assets/source_pages/src_004_p015.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_004",
+        "source_title": "16_1 c5_2 典型环节的幅相特性曲线",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 16,
+        "image": "assets/source_pages/src_004_p016.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_004",
+        "source_title": "16_1 c5_2 典型环节的幅相特性曲线",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 17,
+        "image": "assets/source_pages/src_004_p017.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_004",
+        "source_title": "16_1 c5_2 典型环节的幅相特性曲线",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 21,
+        "image": "assets/source_pages/src_004_p021.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_004",
+        "source_title": "16_1 c5_2 典型环节的幅相特性曲线",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 22,
+        "image": "assets/source_pages/src_004_p022.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_004",
+        "source_title": "16_1 c5_2 典型环节的幅相特性曲线",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 23,
+        "image": "assets/source_pages/src_004_p023.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_004",
+        "source_title": "16_1 c5_2 典型环节的幅相特性曲线",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 24,
+        "image": "assets/source_pages/src_004_p024.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_004",
+        "source_title": "16_1 c5_2 典型环节的幅相特性曲线",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 25,
+        "image": "assets/source_pages/src_004_p025.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_004",
+        "source_title": "16_1 c5_2 典型环节的幅相特性曲线",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 27,
+        "image": "assets/source_pages/src_004_p027.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_004",
+        "source_title": "16_1 c5_2 典型环节的幅相特性曲线",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 28,
+        "image": "assets/source_pages/src_004_p028.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_004",
+        "source_title": "16_1 c5_2 典型环节的幅相特性曲线",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 29,
+        "image": "assets/source_pages/src_004_p029.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_004",
+        "source_title": "16_1 c5_2 典型环节的幅相特性曲线",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 30,
+        "image": "assets/source_pages/src_004_p030.png",
+        "important": false,
+        "double_important": false
+      },
+      {
+        "source_id": "src_004",
+        "source_title": "16_1 c5_2 典型环节的幅相特性曲线",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 31,
+        "image": "assets/source_pages/src_004_p031.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_004",
+        "source_title": "16_1 c5_2 典型环节的幅相特性曲线",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 32,
+        "image": "assets/source_pages/src_004_p032.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_006",
+        "source_title": "17_1 c5_2 对数频率特性_1 典型环节",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 1,
+        "image": "assets/source_pages/src_006_p001.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_006",
+        "source_title": "17_1 c5_2 对数频率特性_1 典型环节",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 2,
+        "image": "assets/source_pages/src_006_p002.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_006",
+        "source_title": "17_1 c5_2 对数频率特性_1 典型环节",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 3,
+        "image": "assets/source_pages/src_006_p003.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_006",
+        "source_title": "17_1 c5_2 对数频率特性_1 典型环节",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 4,
+        "image": "assets/source_pages/src_006_p004.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_006",
+        "source_title": "17_1 c5_2 对数频率特性_1 典型环节",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 5,
+        "image": "assets/source_pages/src_006_p005.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_006",
+        "source_title": "17_1 c5_2 对数频率特性_1 典型环节",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 6,
+        "image": "assets/source_pages/src_006_p006.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_006",
+        "source_title": "17_1 c5_2 对数频率特性_1 典型环节",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 7,
+        "image": "assets/source_pages/src_006_p007.png",
+        "important": false,
+        "double_important": false
+      },
+      {
+        "source_id": "src_006",
+        "source_title": "17_1 c5_2 对数频率特性_1 典型环节",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 8,
+        "image": "assets/source_pages/src_006_p008.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_006",
+        "source_title": "17_1 c5_2 对数频率特性_1 典型环节",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 9,
+        "image": "assets/source_pages/src_006_p009.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_006",
+        "source_title": "17_1 c5_2 对数频率特性_1 典型环节",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 10,
+        "image": "assets/source_pages/src_006_p010.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_006",
+        "source_title": "17_1 c5_2 对数频率特性_1 典型环节",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 11,
+        "image": "assets/source_pages/src_006_p011.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_006",
+        "source_title": "17_1 c5_2 对数频率特性_1 典型环节",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 12,
+        "image": "assets/source_pages/src_006_p012.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_006",
+        "source_title": "17_1 c5_2 对数频率特性_1 典型环节",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 13,
+        "image": "assets/source_pages/src_006_p013.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_006",
+        "source_title": "17_1 c5_2 对数频率特性_1 典型环节",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 14,
+        "image": "assets/source_pages/src_006_p014.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_006",
+        "source_title": "17_1 c5_2 对数频率特性_1 典型环节",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 15,
+        "image": "assets/source_pages/src_006_p015.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_006",
+        "source_title": "17_1 c5_2 对数频率特性_1 典型环节",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 16,
+        "image": "assets/source_pages/src_006_p016.png",
+        "important": false,
+        "double_important": false
+      },
+      {
+        "source_id": "src_006",
+        "source_title": "17_1 c5_2 对数频率特性_1 典型环节",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 17,
+        "image": "assets/source_pages/src_006_p017.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_006",
+        "source_title": "17_1 c5_2 对数频率特性_1 典型环节",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 18,
+        "image": "assets/source_pages/src_006_p018.png",
+        "important": false,
+        "double_important": false
+      }
+    ],
+    "related_homework": []
+  },
+  {
+    "id": "k5_nyquist_margin",
+    "chapter": "第五章 频域分析",
+    "title": "Nyquist 判据、对数稳定判据与稳定裕度",
+    "beginner": "频域稳定性不是只看曲线形状，而是看开环频率特性怎样绕过临界点 -1。稳定裕度则衡量离临界失稳还有多远。",
+    "prerequisites": [
+      "复平面",
+      "开环传递函数",
+      "闭环稳定的特征方程"
+    ],
+    "must_know": [
+      "Nyquist 判据通过开环频率特性包围 -1 点的情况判断闭环稳定。",
+      "相角裕度和幅值裕度分别从穿越频率读出。",
+      "裕度越大通常稳定余量越充分，但过大可能牺牲快速性。"
+    ],
+    "formulas": [
+      "<div class=\"math-block\"><div>gamma = 180° + phase G(j wc)</div>\n<div>Kg = 1 / |G(j wg)|</div></div>"
+    ],
+    "common_mistakes": [
+      "把幅值穿越频率和相位穿越频率互换。"
+    ],
+    "source_pages": [
+      {
+        "source_id": "src_008",
+        "source_title": "18 c5_3 频域稳定判据1 奈奎斯特稳定判据",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 1,
+        "image": "assets/source_pages/src_008_p001.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_008",
+        "source_title": "18 c5_3 频域稳定判据1 奈奎斯特稳定判据",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 2,
+        "image": "assets/source_pages/src_008_p002.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_008",
+        "source_title": "18 c5_3 频域稳定判据1 奈奎斯特稳定判据",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 3,
+        "image": "assets/source_pages/src_008_p003.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_008",
+        "source_title": "18 c5_3 频域稳定判据1 奈奎斯特稳定判据",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 4,
+        "image": "assets/source_pages/src_008_p004.png",
+        "important": false,
+        "double_important": false
+      },
+      {
+        "source_id": "src_008",
+        "source_title": "18 c5_3 频域稳定判据1 奈奎斯特稳定判据",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 5,
+        "image": "assets/source_pages/src_008_p005.png",
+        "important": false,
+        "double_important": false
+      },
+      {
+        "source_id": "src_008",
+        "source_title": "18 c5_3 频域稳定判据1 奈奎斯特稳定判据",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 6,
+        "image": "assets/source_pages/src_008_p006.png",
+        "important": false,
+        "double_important": false
+      },
+      {
+        "source_id": "src_008",
+        "source_title": "18 c5_3 频域稳定判据1 奈奎斯特稳定判据",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 7,
+        "image": "assets/source_pages/src_008_p007.png",
+        "important": false,
+        "double_important": false
+      },
+      {
+        "source_id": "src_008",
+        "source_title": "18 c5_3 频域稳定判据1 奈奎斯特稳定判据",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 8,
+        "image": "assets/source_pages/src_008_p008.png",
+        "important": false,
+        "double_important": false
+      },
+      {
+        "source_id": "src_008",
+        "source_title": "18 c5_3 频域稳定判据1 奈奎斯特稳定判据",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 10,
+        "image": "assets/source_pages/src_008_p010.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_008",
+        "source_title": "18 c5_3 频域稳定判据1 奈奎斯特稳定判据",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 11,
+        "image": "assets/source_pages/src_008_p011.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_008",
+        "source_title": "18 c5_3 频域稳定判据1 奈奎斯特稳定判据",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 12,
+        "image": "assets/source_pages/src_008_p012.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_008",
+        "source_title": "18 c5_3 频域稳定判据1 奈奎斯特稳定判据",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 13,
+        "image": "assets/source_pages/src_008_p013.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_008",
+        "source_title": "18 c5_3 频域稳定判据1 奈奎斯特稳定判据",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 14,
+        "image": "assets/source_pages/src_008_p014.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_008",
+        "source_title": "18 c5_3 频域稳定判据1 奈奎斯特稳定判据",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 15,
+        "image": "assets/source_pages/src_008_p015.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_008",
+        "source_title": "18 c5_3 频域稳定判据1 奈奎斯特稳定判据",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 16,
+        "image": "assets/source_pages/src_008_p016.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_008",
+        "source_title": "18 c5_3 频域稳定判据1 奈奎斯特稳定判据",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 17,
+        "image": "assets/source_pages/src_008_p017.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_008",
+        "source_title": "18 c5_3 频域稳定判据1 奈奎斯特稳定判据",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 18,
+        "image": "assets/source_pages/src_008_p018.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_008",
+        "source_title": "18 c5_3 频域稳定判据1 奈奎斯特稳定判据",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 19,
+        "image": "assets/source_pages/src_008_p019.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_008",
+        "source_title": "18 c5_3 频域稳定判据1 奈奎斯特稳定判据",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 21,
+        "image": "assets/source_pages/src_008_p021.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_008",
+        "source_title": "18 c5_3 频域稳定判据1 奈奎斯特稳定判据",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 22,
+        "image": "assets/source_pages/src_008_p022.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_008",
+        "source_title": "18 c5_3 频域稳定判据1 奈奎斯特稳定判据",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 23,
+        "image": "assets/source_pages/src_008_p023.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_008",
+        "source_title": "18 c5_3 频域稳定判据1 奈奎斯特稳定判据",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 24,
+        "image": "assets/source_pages/src_008_p024.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_008",
+        "source_title": "18 c5_3 频域稳定判据1 奈奎斯特稳定判据",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 25,
+        "image": "assets/source_pages/src_008_p025.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_008",
+        "source_title": "18 c5_3 频域稳定判据1 奈奎斯特稳定判据",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 26,
+        "image": "assets/source_pages/src_008_p026.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_008",
+        "source_title": "18 c5_3 频域稳定判据1 奈奎斯特稳定判据",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 30,
+        "image": "assets/source_pages/src_008_p030.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_008",
+        "source_title": "18 c5_3 频域稳定判据1 奈奎斯特稳定判据",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 31,
+        "image": "assets/source_pages/src_008_p031.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_008",
+        "source_title": "18 c5_3 频域稳定判据1 奈奎斯特稳定判据",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 32,
+        "image": "assets/source_pages/src_008_p032.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_008",
+        "source_title": "18 c5_3 频域稳定判据1 奈奎斯特稳定判据",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 33,
+        "image": "assets/source_pages/src_008_p033.png",
+        "important": false,
+        "double_important": false
+      },
+      {
+        "source_id": "src_009",
+        "source_title": "19_1 c5_3 频域稳定判据2 对数频域稳定判据",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 1,
+        "image": "assets/source_pages/src_009_p001.png",
+        "important": false,
+        "double_important": false
+      },
+      {
+        "source_id": "src_009",
+        "source_title": "19_1 c5_3 频域稳定判据2 对数频域稳定判据",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 2,
+        "image": "assets/source_pages/src_009_p002.png",
+        "important": false,
+        "double_important": false
+      },
+      {
+        "source_id": "src_009",
+        "source_title": "19_1 c5_3 频域稳定判据2 对数频域稳定判据",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 3,
+        "image": "assets/source_pages/src_009_p003.png",
+        "important": false,
+        "double_important": false
+      },
+      {
+        "source_id": "src_009",
+        "source_title": "19_1 c5_3 频域稳定判据2 对数频域稳定判据",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 4,
+        "image": "assets/source_pages/src_009_p004.png",
+        "important": false,
+        "double_important": false
+      },
+      {
+        "source_id": "src_009",
+        "source_title": "19_1 c5_3 频域稳定判据2 对数频域稳定判据",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 5,
+        "image": "assets/source_pages/src_009_p005.png",
+        "important": false,
+        "double_important": false
+      },
+      {
+        "source_id": "src_009",
+        "source_title": "19_1 c5_3 频域稳定判据2 对数频域稳定判据",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 6,
+        "image": "assets/source_pages/src_009_p006.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_009",
+        "source_title": "19_1 c5_3 频域稳定判据2 对数频域稳定判据",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 7,
+        "image": "assets/source_pages/src_009_p007.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_009",
+        "source_title": "19_1 c5_3 频域稳定判据2 对数频域稳定判据",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 8,
+        "image": "assets/source_pages/src_009_p008.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_009",
+        "source_title": "19_1 c5_3 频域稳定判据2 对数频域稳定判据",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 9,
+        "image": "assets/source_pages/src_009_p009.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_009",
+        "source_title": "19_1 c5_3 频域稳定判据2 对数频域稳定判据",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 11,
+        "image": "assets/source_pages/src_009_p011.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_009",
+        "source_title": "19_1 c5_3 频域稳定判据2 对数频域稳定判据",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 12,
+        "image": "assets/source_pages/src_009_p012.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_009",
+        "source_title": "19_1 c5_3 频域稳定判据2 对数频域稳定判据",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 13,
+        "image": "assets/source_pages/src_009_p013.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_009",
+        "source_title": "19_1 c5_3 频域稳定判据2 对数频域稳定判据",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 14,
+        "image": "assets/source_pages/src_009_p014.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_010",
+        "source_title": "19_2 c5_4 频域稳定裕度",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 1,
+        "image": "assets/source_pages/src_010_p001.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_010",
+        "source_title": "19_2 c5_4 频域稳定裕度",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 2,
+        "image": "assets/source_pages/src_010_p002.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_010",
+        "source_title": "19_2 c5_4 频域稳定裕度",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 3,
+        "image": "assets/source_pages/src_010_p003.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_010",
+        "source_title": "19_2 c5_4 频域稳定裕度",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 4,
+        "image": "assets/source_pages/src_010_p004.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_010",
+        "source_title": "19_2 c5_4 频域稳定裕度",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 5,
+        "image": "assets/source_pages/src_010_p005.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_010",
+        "source_title": "19_2 c5_4 频域稳定裕度",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 6,
+        "image": "assets/source_pages/src_010_p006.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_010",
+        "source_title": "19_2 c5_4 频域稳定裕度",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 7,
+        "image": "assets/source_pages/src_010_p007.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_010",
+        "source_title": "19_2 c5_4 频域稳定裕度",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 8,
+        "image": "assets/source_pages/src_010_p008.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_010",
+        "source_title": "19_2 c5_4 频域稳定裕度",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 9,
+        "image": "assets/source_pages/src_010_p009.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_010",
+        "source_title": "19_2 c5_4 频域稳定裕度",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 10,
+        "image": "assets/source_pages/src_010_p010.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_010",
+        "source_title": "19_2 c5_4 频域稳定裕度",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 11,
+        "image": "assets/source_pages/src_010_p011.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_010",
+        "source_title": "19_2 c5_4 频域稳定裕度",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 12,
+        "image": "assets/source_pages/src_010_p012.png",
+        "important": false,
+        "double_important": false
+      }
+    ],
+    "related_homework": []
+  },
+  {
+    "id": "k5_performance",
+    "chapter": "第五章 频域分析",
+    "title": "由开环/闭环频域指标分析系统性能",
+    "beginner": "低频段影响稳态精度，中频段影响动态性能，高频段影响抗噪。复习时要能把曲线形态和性能语言互相转换。",
+    "prerequisites": [
+      "Bode 图",
+      "稳定裕度",
+      "时域性能指标"
+    ],
+    "must_know": [
+      "低频增益高通常稳态误差小。",
+      "中频段斜率和穿越频率影响快速性与稳定裕度。",
+      "闭环频域指标包括谐振峰值、谐振频率和带宽。"
+    ],
+    "formulas": [
+      "<div class=\"math-block\"><div>Mr = max |Phi(jw)|</div>\n<div>wb: |Phi(jw)| drops to 0.707 of low-frequency value</div></div>"
+    ],
+    "common_mistakes": [
+      "只提高增益追求精度，却忽略稳定裕度下降。"
+    ],
+    "source_pages": [
+      {
+        "source_id": "src_011",
+        "source_title": "20 c5_x 利用开环对数幅频特性分析系统的性能",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 1,
+        "image": "assets/source_pages/src_011_p001.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_011",
+        "source_title": "20 c5_x 利用开环对数幅频特性分析系统的性能",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 2,
+        "image": "assets/source_pages/src_011_p002.png",
+        "important": false,
+        "double_important": false
+      },
+      {
+        "source_id": "src_011",
+        "source_title": "20 c5_x 利用开环对数幅频特性分析系统的性能",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 3,
+        "image": "assets/source_pages/src_011_p003.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_011",
+        "source_title": "20 c5_x 利用开环对数幅频特性分析系统的性能",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 4,
+        "image": "assets/source_pages/src_011_p004.png",
+        "important": false,
+        "double_important": false
+      },
+      {
+        "source_id": "src_011",
+        "source_title": "20 c5_x 利用开环对数幅频特性分析系统的性能",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 5,
+        "image": "assets/source_pages/src_011_p005.png",
+        "important": false,
+        "double_important": false
+      },
+      {
+        "source_id": "src_011",
+        "source_title": "20 c5_x 利用开环对数幅频特性分析系统的性能",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 6,
+        "image": "assets/source_pages/src_011_p006.png",
+        "important": false,
+        "double_important": false
+      },
+      {
+        "source_id": "src_011",
+        "source_title": "20 c5_x 利用开环对数幅频特性分析系统的性能",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 7,
+        "image": "assets/source_pages/src_011_p007.png",
+        "important": false,
+        "double_important": false
+      },
+      {
+        "source_id": "src_011",
+        "source_title": "20 c5_x 利用开环对数幅频特性分析系统的性能",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 8,
+        "image": "assets/source_pages/src_011_p008.png",
+        "important": false,
+        "double_important": false
+      },
+      {
+        "source_id": "src_011",
+        "source_title": "20 c5_x 利用开环对数幅频特性分析系统的性能",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 12,
+        "image": "assets/source_pages/src_011_p012.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_011",
+        "source_title": "20 c5_x 利用开环对数幅频特性分析系统的性能",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 14,
+        "image": "assets/source_pages/src_011_p014.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_011",
+        "source_title": "20 c5_x 利用开环对数幅频特性分析系统的性能",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 18,
+        "image": "assets/source_pages/src_011_p018.png",
+        "important": false,
+        "double_important": false
+      },
+      {
+        "source_id": "src_011",
+        "source_title": "20 c5_x 利用开环对数幅频特性分析系统的性能",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 19,
+        "image": "assets/source_pages/src_011_p019.png",
+        "important": false,
+        "double_important": false
+      },
+      {
+        "source_id": "src_011",
+        "source_title": "20 c5_x 利用开环对数幅频特性分析系统的性能",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 20,
+        "image": "assets/source_pages/src_011_p020.png",
+        "important": false,
+        "double_important": false
+      },
+      {
+        "source_id": "src_012",
+        "source_title": "20_2 c5_5 闭环系统的频域性能指标",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 1,
+        "image": "assets/source_pages/src_012_p001.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_012",
+        "source_title": "20_2 c5_5 闭环系统的频域性能指标",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 2,
+        "image": "assets/source_pages/src_012_p002.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_012",
+        "source_title": "20_2 c5_5 闭环系统的频域性能指标",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 3,
+        "image": "assets/source_pages/src_012_p003.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_012",
+        "source_title": "20_2 c5_5 闭环系统的频域性能指标",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 4,
+        "image": "assets/source_pages/src_012_p004.png",
+        "important": false,
+        "double_important": false
+      },
+      {
+        "source_id": "src_012",
+        "source_title": "20_2 c5_5 闭环系统的频域性能指标",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 5,
+        "image": "assets/source_pages/src_012_p005.png",
+        "important": false,
+        "double_important": false
+      },
+      {
+        "source_id": "src_012",
+        "source_title": "20_2 c5_5 闭环系统的频域性能指标",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 6,
+        "image": "assets/source_pages/src_012_p006.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_012",
+        "source_title": "20_2 c5_5 闭环系统的频域性能指标",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 7,
+        "image": "assets/source_pages/src_012_p007.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_012",
+        "source_title": "20_2 c5_5 闭环系统的频域性能指标",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 8,
+        "image": "assets/source_pages/src_012_p008.png",
+        "important": false,
+        "double_important": false
+      },
+      {
+        "source_id": "src_012",
+        "source_title": "20_2 c5_5 闭环系统的频域性能指标",
+        "chapter": "第五章",
+        "role": "lecture",
+        "page": 9,
+        "image": "assets/source_pages/src_012_p009.png",
+        "important": false,
+        "double_important": false
+      }
+    ],
+    "related_homework": []
+  },
+  {
+    "id": "k6_correction",
+    "chapter": "第六章 校正",
+    "title": "超前校正与滞后校正",
+    "beginner": "校正是在原系统性能不满足要求时增加环节。超前校正常用于增加相角裕度和改善动态性能；滞后校正常用于改善稳态精度并尽量少破坏中频段。",
+    "prerequisites": [
+      "Bode 图",
+      "稳定裕度",
+      "稳态误差系数"
+    ],
+    "must_know": [
+      "超前校正提供正相角，通常把最大超前角放在新的穿越频率附近。",
+      "滞后校正提高低频增益，转折频率要放在较低频段。",
+      "设计题必须按指标反推参数，而不是随意添加环节。"
+    ],
+    "formulas": [
+      "<div class=\"math-block\"><div>Gc_lead(s) = (T s + 1) / (alpha T s + 1), 0 &lt; alpha &lt; 1</div>\n<div>Gc_lag(s) = (beta T s + 1) / (T s + 1), beta &gt; 1</div></div>"
+    ],
+    "common_mistakes": [
+      "超前/滞后参数条件记反。"
+    ],
+    "source_pages": [
+      {
+        "source_id": "src_013",
+        "source_title": "21 c6 线性系统的校正_超前校正",
+        "chapter": "第六章",
+        "role": "lecture",
+        "page": 1,
+        "image": "assets/source_pages/src_013_p001.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_013",
+        "source_title": "21 c6 线性系统的校正_超前校正",
+        "chapter": "第六章",
+        "role": "lecture",
+        "page": 2,
+        "image": "assets/source_pages/src_013_p002.png",
+        "important": false,
+        "double_important": false
+      },
+      {
+        "source_id": "src_013",
+        "source_title": "21 c6 线性系统的校正_超前校正",
+        "chapter": "第六章",
+        "role": "lecture",
+        "page": 3,
+        "image": "assets/source_pages/src_013_p003.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_013",
+        "source_title": "21 c6 线性系统的校正_超前校正",
+        "chapter": "第六章",
+        "role": "lecture",
+        "page": 4,
+        "image": "assets/source_pages/src_013_p004.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_013",
+        "source_title": "21 c6 线性系统的校正_超前校正",
+        "chapter": "第六章",
+        "role": "lecture",
+        "page": 5,
+        "image": "assets/source_pages/src_013_p005.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_013",
+        "source_title": "21 c6 线性系统的校正_超前校正",
+        "chapter": "第六章",
+        "role": "lecture",
+        "page": 6,
+        "image": "assets/source_pages/src_013_p006.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_013",
+        "source_title": "21 c6 线性系统的校正_超前校正",
+        "chapter": "第六章",
+        "role": "lecture",
+        "page": 7,
+        "image": "assets/source_pages/src_013_p007.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_013",
+        "source_title": "21 c6 线性系统的校正_超前校正",
+        "chapter": "第六章",
+        "role": "lecture",
+        "page": 8,
+        "image": "assets/source_pages/src_013_p008.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_013",
+        "source_title": "21 c6 线性系统的校正_超前校正",
+        "chapter": "第六章",
+        "role": "lecture",
+        "page": 9,
+        "image": "assets/source_pages/src_013_p009.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_013",
+        "source_title": "21 c6 线性系统的校正_超前校正",
+        "chapter": "第六章",
+        "role": "lecture",
+        "page": 10,
+        "image": "assets/source_pages/src_013_p010.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_013",
+        "source_title": "21 c6 线性系统的校正_超前校正",
+        "chapter": "第六章",
+        "role": "lecture",
+        "page": 11,
+        "image": "assets/source_pages/src_013_p011.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_013",
+        "source_title": "21 c6 线性系统的校正_超前校正",
+        "chapter": "第六章",
+        "role": "lecture",
+        "page": 12,
+        "image": "assets/source_pages/src_013_p012.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_013",
+        "source_title": "21 c6 线性系统的校正_超前校正",
+        "chapter": "第六章",
+        "role": "lecture",
+        "page": 13,
+        "image": "assets/source_pages/src_013_p013.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_013",
+        "source_title": "21 c6 线性系统的校正_超前校正",
+        "chapter": "第六章",
+        "role": "lecture",
+        "page": 14,
+        "image": "assets/source_pages/src_013_p014.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_013",
+        "source_title": "21 c6 线性系统的校正_超前校正",
+        "chapter": "第六章",
+        "role": "lecture",
+        "page": 15,
+        "image": "assets/source_pages/src_013_p015.png",
+        "important": false,
+        "double_important": false
+      },
+      {
+        "source_id": "src_013",
+        "source_title": "21 c6 线性系统的校正_超前校正",
+        "chapter": "第六章",
+        "role": "lecture",
+        "page": 16,
+        "image": "assets/source_pages/src_013_p016.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_013",
+        "source_title": "21 c6 线性系统的校正_超前校正",
+        "chapter": "第六章",
+        "role": "lecture",
+        "page": 17,
+        "image": "assets/source_pages/src_013_p017.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_014",
+        "source_title": "22 c6 线性系统的校正_滞后校正",
+        "chapter": "第六章",
+        "role": "lecture",
+        "page": 1,
+        "image": "assets/source_pages/src_014_p001.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_014",
+        "source_title": "22 c6 线性系统的校正_滞后校正",
+        "chapter": "第六章",
+        "role": "lecture",
+        "page": 2,
+        "image": "assets/source_pages/src_014_p002.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_014",
+        "source_title": "22 c6 线性系统的校正_滞后校正",
+        "chapter": "第六章",
+        "role": "lecture",
+        "page": 3,
+        "image": "assets/source_pages/src_014_p003.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_014",
+        "source_title": "22 c6 线性系统的校正_滞后校正",
+        "chapter": "第六章",
+        "role": "lecture",
+        "page": 4,
+        "image": "assets/source_pages/src_014_p004.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_014",
+        "source_title": "22 c6 线性系统的校正_滞后校正",
+        "chapter": "第六章",
+        "role": "lecture",
+        "page": 5,
+        "image": "assets/source_pages/src_014_p005.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_014",
+        "source_title": "22 c6 线性系统的校正_滞后校正",
+        "chapter": "第六章",
+        "role": "lecture",
+        "page": 6,
+        "image": "assets/source_pages/src_014_p006.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_014",
+        "source_title": "22 c6 线性系统的校正_滞后校正",
+        "chapter": "第六章",
+        "role": "lecture",
+        "page": 7,
+        "image": "assets/source_pages/src_014_p007.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_014",
+        "source_title": "22 c6 线性系统的校正_滞后校正",
+        "chapter": "第六章",
+        "role": "lecture",
+        "page": 8,
+        "image": "assets/source_pages/src_014_p008.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_014",
+        "source_title": "22 c6 线性系统的校正_滞后校正",
+        "chapter": "第六章",
+        "role": "lecture",
+        "page": 9,
+        "image": "assets/source_pages/src_014_p009.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_014",
+        "source_title": "22 c6 线性系统的校正_滞后校正",
+        "chapter": "第六章",
+        "role": "lecture",
+        "page": 10,
+        "image": "assets/source_pages/src_014_p010.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_014",
+        "source_title": "22 c6 线性系统的校正_滞后校正",
+        "chapter": "第六章",
+        "role": "lecture",
+        "page": 11,
+        "image": "assets/source_pages/src_014_p011.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_014",
+        "source_title": "22 c6 线性系统的校正_滞后校正",
+        "chapter": "第六章",
+        "role": "lecture",
+        "page": 12,
+        "image": "assets/source_pages/src_014_p012.png",
+        "important": false,
+        "double_important": false
+      },
+      {
+        "source_id": "src_014",
+        "source_title": "22 c6 线性系统的校正_滞后校正",
+        "chapter": "第六章",
+        "role": "lecture",
+        "page": 13,
+        "image": "assets/source_pages/src_014_p013.png",
+        "important": true,
+        "double_important": false
+      }
+    ],
+    "related_homework": []
+  },
+  {
+    "id": "k8_nonlinear",
+    "chapter": "第八章 非线性",
+    "title": "非线性系统与描述函数法",
+    "beginner": "非线性系统不能简单套叠加原理。描述函数法用近似频域方法分析某些非线性环节引起的自振或极限环。",
+    "prerequisites": [
+      "频率响应",
+      "相平面基本概念",
+      "线性化近似"
+    ],
+    "must_know": [
+      "常见非线性包括饱和、死区、继电、滞环等。",
+      "描述函数法是近似方法，适合特定非线性和近似正弦运动。",
+      "非线性系统可能有多个平衡点和极限环。"
+    ],
+    "formulas": [],
+    "common_mistakes": [
+      "把非线性系统当作普通线性系统直接叠加。"
+    ],
+    "source_pages": [
+      {
+        "source_id": "src_019",
+        "source_title": "第八章 非线性控制系统",
+        "chapter": "第八章",
+        "role": "lecture",
+        "page": 1,
+        "image": "assets/source_pages/src_019_p001.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_019",
+        "source_title": "第八章 非线性控制系统",
+        "chapter": "第八章",
+        "role": "lecture",
+        "page": 2,
+        "image": "assets/source_pages/src_019_p002.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_019",
+        "source_title": "第八章 非线性控制系统",
+        "chapter": "第八章",
+        "role": "lecture",
+        "page": 3,
+        "image": "assets/source_pages/src_019_p003.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_019",
+        "source_title": "第八章 非线性控制系统",
+        "chapter": "第八章",
+        "role": "lecture",
+        "page": 4,
+        "image": "assets/source_pages/src_019_p004.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_019",
+        "source_title": "第八章 非线性控制系统",
+        "chapter": "第八章",
+        "role": "lecture",
+        "page": 5,
+        "image": "assets/source_pages/src_019_p005.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_019",
+        "source_title": "第八章 非线性控制系统",
+        "chapter": "第八章",
+        "role": "lecture",
+        "page": 6,
+        "image": "assets/source_pages/src_019_p006.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_019",
+        "source_title": "第八章 非线性控制系统",
+        "chapter": "第八章",
+        "role": "lecture",
+        "page": 7,
+        "image": "assets/source_pages/src_019_p007.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_019",
+        "source_title": "第八章 非线性控制系统",
+        "chapter": "第八章",
+        "role": "lecture",
+        "page": 8,
+        "image": "assets/source_pages/src_019_p008.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_019",
+        "source_title": "第八章 非线性控制系统",
+        "chapter": "第八章",
+        "role": "lecture",
+        "page": 9,
+        "image": "assets/source_pages/src_019_p009.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_019",
+        "source_title": "第八章 非线性控制系统",
+        "chapter": "第八章",
+        "role": "lecture",
+        "page": 10,
+        "image": "assets/source_pages/src_019_p010.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_019",
+        "source_title": "第八章 非线性控制系统",
+        "chapter": "第八章",
+        "role": "lecture",
+        "page": 11,
+        "image": "assets/source_pages/src_019_p011.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_019",
+        "source_title": "第八章 非线性控制系统",
+        "chapter": "第八章",
+        "role": "lecture",
+        "page": 12,
+        "image": "assets/source_pages/src_019_p012.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_019",
+        "source_title": "第八章 非线性控制系统",
+        "chapter": "第八章",
+        "role": "lecture",
+        "page": 13,
+        "image": "assets/source_pages/src_019_p013.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_019",
+        "source_title": "第八章 非线性控制系统",
+        "chapter": "第八章",
+        "role": "lecture",
+        "page": 16,
+        "image": "assets/source_pages/src_019_p016.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_019",
+        "source_title": "第八章 非线性控制系统",
+        "chapter": "第八章",
+        "role": "lecture",
+        "page": 18,
+        "image": "assets/source_pages/src_019_p018.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_019",
+        "source_title": "第八章 非线性控制系统",
+        "chapter": "第八章",
+        "role": "lecture",
+        "page": 19,
+        "image": "assets/source_pages/src_019_p019.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_019",
+        "source_title": "第八章 非线性控制系统",
+        "chapter": "第八章",
+        "role": "lecture",
+        "page": 20,
+        "image": "assets/source_pages/src_019_p020.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_019",
+        "source_title": "第八章 非线性控制系统",
+        "chapter": "第八章",
+        "role": "lecture",
+        "page": 21,
+        "image": "assets/source_pages/src_019_p021.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_019",
+        "source_title": "第八章 非线性控制系统",
+        "chapter": "第八章",
+        "role": "lecture",
+        "page": 22,
+        "image": "assets/source_pages/src_019_p022.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_019",
+        "source_title": "第八章 非线性控制系统",
+        "chapter": "第八章",
+        "role": "lecture",
+        "page": 23,
+        "image": "assets/source_pages/src_019_p023.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_019",
+        "source_title": "第八章 非线性控制系统",
+        "chapter": "第八章",
+        "role": "lecture",
+        "page": 24,
+        "image": "assets/source_pages/src_019_p024.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_019",
+        "source_title": "第八章 非线性控制系统",
+        "chapter": "第八章",
+        "role": "lecture",
+        "page": 25,
+        "image": "assets/source_pages/src_019_p025.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_019",
+        "source_title": "第八章 非线性控制系统",
+        "chapter": "第八章",
+        "role": "lecture",
+        "page": 26,
+        "image": "assets/source_pages/src_019_p026.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_019",
+        "source_title": "第八章 非线性控制系统",
+        "chapter": "第八章",
+        "role": "lecture",
+        "page": 27,
+        "image": "assets/source_pages/src_019_p027.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_019",
+        "source_title": "第八章 非线性控制系统",
+        "chapter": "第八章",
+        "role": "lecture",
+        "page": 28,
+        "image": "assets/source_pages/src_019_p028.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_019",
+        "source_title": "第八章 非线性控制系统",
+        "chapter": "第八章",
+        "role": "lecture",
+        "page": 29,
+        "image": "assets/source_pages/src_019_p029.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_019",
+        "source_title": "第八章 非线性控制系统",
+        "chapter": "第八章",
+        "role": "lecture",
+        "page": 30,
+        "image": "assets/source_pages/src_019_p030.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_019",
+        "source_title": "第八章 非线性控制系统",
+        "chapter": "第八章",
+        "role": "lecture",
+        "page": 31,
+        "image": "assets/source_pages/src_019_p031.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_019",
+        "source_title": "第八章 非线性控制系统",
+        "chapter": "第八章",
+        "role": "lecture",
+        "page": 32,
+        "image": "assets/source_pages/src_019_p032.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_019",
+        "source_title": "第八章 非线性控制系统",
+        "chapter": "第八章",
+        "role": "lecture",
+        "page": 33,
+        "image": "assets/source_pages/src_019_p033.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_019",
+        "source_title": "第八章 非线性控制系统",
+        "chapter": "第八章",
+        "role": "lecture",
+        "page": 34,
+        "image": "assets/source_pages/src_019_p034.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_019",
+        "source_title": "第八章 非线性控制系统",
+        "chapter": "第八章",
+        "role": "lecture",
+        "page": 35,
+        "image": "assets/source_pages/src_019_p035.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_019",
+        "source_title": "第八章 非线性控制系统",
+        "chapter": "第八章",
+        "role": "lecture",
+        "page": 39,
+        "image": "assets/source_pages/src_019_p039.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_019",
+        "source_title": "第八章 非线性控制系统",
+        "chapter": "第八章",
+        "role": "lecture",
+        "page": 40,
+        "image": "assets/source_pages/src_019_p040.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_019",
+        "source_title": "第八章 非线性控制系统",
+        "chapter": "第八章",
+        "role": "lecture",
+        "page": 41,
+        "image": "assets/source_pages/src_019_p041.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_019",
+        "source_title": "第八章 非线性控制系统",
+        "chapter": "第八章",
+        "role": "lecture",
+        "page": 42,
+        "image": "assets/source_pages/src_019_p042.png",
+        "important": false,
+        "double_important": false
+      },
+      {
+        "source_id": "src_019",
+        "source_title": "第八章 非线性控制系统",
+        "chapter": "第八章",
+        "role": "lecture",
+        "page": 43,
+        "image": "assets/source_pages/src_019_p043.png",
+        "important": false,
+        "double_important": false
+      },
+      {
+        "source_id": "src_019",
+        "source_title": "第八章 非线性控制系统",
+        "chapter": "第八章",
+        "role": "lecture",
+        "page": 44,
+        "image": "assets/source_pages/src_019_p044.png",
+        "important": true,
+        "double_important": false
+      }
+    ],
+    "related_homework": []
+  },
+  {
+    "id": "k9_state_space",
+    "chapter": "第九章 状态空间",
+    "title": "状态空间描述、可控性与可观测性",
+    "beginner": "状态空间用一组一阶微分方程描述系统内部状态，适合多输入多输出系统。先会选状态变量，再写 A、B、C、D 矩阵。",
+    "prerequisites": [
+      "矩阵乘法",
+      "线性代数秩",
+      "微分方程"
+    ],
+    "must_know": [
+      "标准形式：x_dot = A x + B u，y = C x + D u。",
+      "可控性看可控矩阵秩；可观测性看可观测矩阵秩。",
+      "状态反馈和状态观测器建立在可控、可观测条件上。"
+    ],
+    "formulas": [
+      "<div class=\"math-block\"><div>x_dot = A x + B u</div>\n<div>y = C x + D u</div>\n<div>Qc = [B, AB, ..., A^{n-1}B]</div>\n<div>Qo = [C; CA; ...; CA^{n-1}]</div></div>"
+    ],
+    "common_mistakes": [
+      "只写传递函数，不会转换成状态变量形式；矩阵维度不匹配。"
+    ],
+    "source_pages": [
+      {
+        "source_id": "src_020",
+        "source_title": "第九章 状态空间分析",
+        "chapter": "第九章",
+        "role": "lecture",
+        "page": 1,
+        "image": "assets/source_pages/src_020_p001.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_020",
+        "source_title": "第九章 状态空间分析",
+        "chapter": "第九章",
+        "role": "lecture",
+        "page": 2,
+        "image": "assets/source_pages/src_020_p002.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_020",
+        "source_title": "第九章 状态空间分析",
+        "chapter": "第九章",
+        "role": "lecture",
+        "page": 3,
+        "image": "assets/source_pages/src_020_p003.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_020",
+        "source_title": "第九章 状态空间分析",
+        "chapter": "第九章",
+        "role": "lecture",
+        "page": 4,
+        "image": "assets/source_pages/src_020_p004.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_020",
+        "source_title": "第九章 状态空间分析",
+        "chapter": "第九章",
+        "role": "lecture",
+        "page": 5,
+        "image": "assets/source_pages/src_020_p005.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_020",
+        "source_title": "第九章 状态空间分析",
+        "chapter": "第九章",
+        "role": "lecture",
+        "page": 6,
+        "image": "assets/source_pages/src_020_p006.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_020",
+        "source_title": "第九章 状态空间分析",
+        "chapter": "第九章",
+        "role": "lecture",
+        "page": 8,
+        "image": "assets/source_pages/src_020_p008.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_020",
+        "source_title": "第九章 状态空间分析",
+        "chapter": "第九章",
+        "role": "lecture",
+        "page": 10,
+        "image": "assets/source_pages/src_020_p010.png",
+        "important": false,
+        "double_important": false
+      },
+      {
+        "source_id": "src_020",
+        "source_title": "第九章 状态空间分析",
+        "chapter": "第九章",
+        "role": "lecture",
+        "page": 11,
+        "image": "assets/source_pages/src_020_p011.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_020",
+        "source_title": "第九章 状态空间分析",
+        "chapter": "第九章",
+        "role": "lecture",
+        "page": 14,
+        "image": "assets/source_pages/src_020_p014.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_020",
+        "source_title": "第九章 状态空间分析",
+        "chapter": "第九章",
+        "role": "lecture",
+        "page": 16,
+        "image": "assets/source_pages/src_020_p016.png",
+        "important": false,
+        "double_important": false
+      },
+      {
+        "source_id": "src_020",
+        "source_title": "第九章 状态空间分析",
+        "chapter": "第九章",
+        "role": "lecture",
+        "page": 18,
+        "image": "assets/source_pages/src_020_p018.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_020",
+        "source_title": "第九章 状态空间分析",
+        "chapter": "第九章",
+        "role": "lecture",
+        "page": 22,
+        "image": "assets/source_pages/src_020_p022.png",
+        "important": false,
+        "double_important": false
+      },
+      {
+        "source_id": "src_020",
+        "source_title": "第九章 状态空间分析",
+        "chapter": "第九章",
+        "role": "lecture",
+        "page": 28,
+        "image": "assets/source_pages/src_020_p028.png",
+        "important": false,
+        "double_important": false
+      },
+      {
+        "source_id": "src_020",
+        "source_title": "第九章 状态空间分析",
+        "chapter": "第九章",
+        "role": "lecture",
+        "page": 29,
+        "image": "assets/source_pages/src_020_p029.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_020",
+        "source_title": "第九章 状态空间分析",
+        "chapter": "第九章",
+        "role": "lecture",
+        "page": 33,
+        "image": "assets/source_pages/src_020_p033.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_020",
+        "source_title": "第九章 状态空间分析",
+        "chapter": "第九章",
+        "role": "lecture",
+        "page": 35,
+        "image": "assets/source_pages/src_020_p035.png",
+        "important": false,
+        "double_important": false
+      },
+      {
+        "source_id": "src_020",
+        "source_title": "第九章 状态空间分析",
+        "chapter": "第九章",
+        "role": "lecture",
+        "page": 43,
+        "image": "assets/source_pages/src_020_p043.png",
+        "important": false,
+        "double_important": false
+      },
+      {
+        "source_id": "src_020",
+        "source_title": "第九章 状态空间分析",
+        "chapter": "第九章",
+        "role": "lecture",
+        "page": 47,
+        "image": "assets/source_pages/src_020_p047.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_020",
+        "source_title": "第九章 状态空间分析",
+        "chapter": "第九章",
+        "role": "lecture",
+        "page": 48,
+        "image": "assets/source_pages/src_020_p048.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_020",
+        "source_title": "第九章 状态空间分析",
+        "chapter": "第九章",
+        "role": "lecture",
+        "page": 50,
+        "image": "assets/source_pages/src_020_p050.png",
+        "important": false,
+        "double_important": false
+      },
+      {
+        "source_id": "src_020",
+        "source_title": "第九章 状态空间分析",
+        "chapter": "第九章",
+        "role": "lecture",
+        "page": 52,
+        "image": "assets/source_pages/src_020_p052.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_020",
+        "source_title": "第九章 状态空间分析",
+        "chapter": "第九章",
+        "role": "lecture",
+        "page": 58,
+        "image": "assets/source_pages/src_020_p058.png",
+        "important": false,
+        "double_important": false
+      },
+      {
+        "source_id": "src_020",
+        "source_title": "第九章 状态空间分析",
+        "chapter": "第九章",
+        "role": "lecture",
+        "page": 59,
+        "image": "assets/source_pages/src_020_p059.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_020",
+        "source_title": "第九章 状态空间分析",
+        "chapter": "第九章",
+        "role": "lecture",
+        "page": 60,
+        "image": "assets/source_pages/src_020_p060.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_020",
+        "source_title": "第九章 状态空间分析",
+        "chapter": "第九章",
+        "role": "lecture",
+        "page": 61,
+        "image": "assets/source_pages/src_020_p061.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_020",
+        "source_title": "第九章 状态空间分析",
+        "chapter": "第九章",
+        "role": "lecture",
+        "page": 62,
+        "image": "assets/source_pages/src_020_p062.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_020",
+        "source_title": "第九章 状态空间分析",
+        "chapter": "第九章",
+        "role": "lecture",
+        "page": 63,
+        "image": "assets/source_pages/src_020_p063.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_020",
+        "source_title": "第九章 状态空间分析",
+        "chapter": "第九章",
+        "role": "lecture",
+        "page": 64,
+        "image": "assets/source_pages/src_020_p064.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_020",
+        "source_title": "第九章 状态空间分析",
+        "chapter": "第九章",
+        "role": "lecture",
+        "page": 65,
+        "image": "assets/source_pages/src_020_p065.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_020",
+        "source_title": "第九章 状态空间分析",
+        "chapter": "第九章",
+        "role": "lecture",
+        "page": 66,
+        "image": "assets/source_pages/src_020_p066.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_020",
+        "source_title": "第九章 状态空间分析",
+        "chapter": "第九章",
+        "role": "lecture",
+        "page": 67,
+        "image": "assets/source_pages/src_020_p067.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_020",
+        "source_title": "第九章 状态空间分析",
+        "chapter": "第九章",
+        "role": "lecture",
+        "page": 68,
+        "image": "assets/source_pages/src_020_p068.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_020",
+        "source_title": "第九章 状态空间分析",
+        "chapter": "第九章",
+        "role": "lecture",
+        "page": 69,
+        "image": "assets/source_pages/src_020_p069.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_020",
+        "source_title": "第九章 状态空间分析",
+        "chapter": "第九章",
+        "role": "lecture",
+        "page": 70,
+        "image": "assets/source_pages/src_020_p070.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_020",
+        "source_title": "第九章 状态空间分析",
+        "chapter": "第九章",
+        "role": "lecture",
+        "page": 71,
+        "image": "assets/source_pages/src_020_p071.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_020",
+        "source_title": "第九章 状态空间分析",
+        "chapter": "第九章",
+        "role": "lecture",
+        "page": 72,
+        "image": "assets/source_pages/src_020_p072.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_020",
+        "source_title": "第九章 状态空间分析",
+        "chapter": "第九章",
+        "role": "lecture",
+        "page": 74,
+        "image": "assets/source_pages/src_020_p074.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_020",
+        "source_title": "第九章 状态空间分析",
+        "chapter": "第九章",
+        "role": "lecture",
+        "page": 75,
+        "image": "assets/source_pages/src_020_p075.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_020",
+        "source_title": "第九章 状态空间分析",
+        "chapter": "第九章",
+        "role": "lecture",
+        "page": 76,
+        "image": "assets/source_pages/src_020_p076.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_020",
+        "source_title": "第九章 状态空间分析",
+        "chapter": "第九章",
+        "role": "lecture",
+        "page": 77,
+        "image": "assets/source_pages/src_020_p077.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_020",
+        "source_title": "第九章 状态空间分析",
+        "chapter": "第九章",
+        "role": "lecture",
+        "page": 78,
+        "image": "assets/source_pages/src_020_p078.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_020",
+        "source_title": "第九章 状态空间分析",
+        "chapter": "第九章",
+        "role": "lecture",
+        "page": 79,
+        "image": "assets/source_pages/src_020_p079.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_020",
+        "source_title": "第九章 状态空间分析",
+        "chapter": "第九章",
+        "role": "lecture",
+        "page": 81,
+        "image": "assets/source_pages/src_020_p081.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_020",
+        "source_title": "第九章 状态空间分析",
+        "chapter": "第九章",
+        "role": "lecture",
+        "page": 84,
+        "image": "assets/source_pages/src_020_p084.png",
+        "important": false,
+        "double_important": false
+      },
+      {
+        "source_id": "src_020",
+        "source_title": "第九章 状态空间分析",
+        "chapter": "第九章",
+        "role": "lecture",
+        "page": 86,
+        "image": "assets/source_pages/src_020_p086.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_020",
+        "source_title": "第九章 状态空间分析",
+        "chapter": "第九章",
+        "role": "lecture",
+        "page": 87,
+        "image": "assets/source_pages/src_020_p087.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_020",
+        "source_title": "第九章 状态空间分析",
+        "chapter": "第九章",
+        "role": "lecture",
+        "page": 88,
+        "image": "assets/source_pages/src_020_p088.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_020",
+        "source_title": "第九章 状态空间分析",
+        "chapter": "第九章",
+        "role": "lecture",
+        "page": 89,
+        "image": "assets/source_pages/src_020_p089.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_020",
+        "source_title": "第九章 状态空间分析",
+        "chapter": "第九章",
+        "role": "lecture",
+        "page": 92,
+        "image": "assets/source_pages/src_020_p092.png",
+        "important": false,
+        "double_important": false
+      },
+      {
+        "source_id": "src_020",
+        "source_title": "第九章 状态空间分析",
+        "chapter": "第九章",
+        "role": "lecture",
+        "page": 94,
+        "image": "assets/source_pages/src_020_p094.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_020",
+        "source_title": "第九章 状态空间分析",
+        "chapter": "第九章",
+        "role": "lecture",
+        "page": 101,
+        "image": "assets/source_pages/src_020_p101.png",
+        "important": false,
+        "double_important": false
+      },
+      {
+        "source_id": "src_020",
+        "source_title": "第九章 状态空间分析",
+        "chapter": "第九章",
+        "role": "lecture",
+        "page": 103,
+        "image": "assets/source_pages/src_020_p103.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_020",
+        "source_title": "第九章 状态空间分析",
+        "chapter": "第九章",
+        "role": "lecture",
+        "page": 104,
+        "image": "assets/source_pages/src_020_p104.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_020",
+        "source_title": "第九章 状态空间分析",
+        "chapter": "第九章",
+        "role": "lecture",
+        "page": 106,
+        "image": "assets/source_pages/src_020_p106.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_020",
+        "source_title": "第九章 状态空间分析",
+        "chapter": "第九章",
+        "role": "lecture",
+        "page": 108,
+        "image": "assets/source_pages/src_020_p108.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_020",
+        "source_title": "第九章 状态空间分析",
+        "chapter": "第九章",
+        "role": "lecture",
+        "page": 109,
+        "image": "assets/source_pages/src_020_p109.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_020",
+        "source_title": "第九章 状态空间分析",
+        "chapter": "第九章",
+        "role": "lecture",
+        "page": 110,
+        "image": "assets/source_pages/src_020_p110.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_020",
+        "source_title": "第九章 状态空间分析",
+        "chapter": "第九章",
+        "role": "lecture",
+        "page": 111,
+        "image": "assets/source_pages/src_020_p111.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_020",
+        "source_title": "第九章 状态空间分析",
+        "chapter": "第九章",
+        "role": "lecture",
+        "page": 112,
+        "image": "assets/source_pages/src_020_p112.png",
+        "important": false,
+        "double_important": false
+      },
+      {
+        "source_id": "src_020",
+        "source_title": "第九章 状态空间分析",
+        "chapter": "第九章",
+        "role": "lecture",
+        "page": 114,
+        "image": "assets/source_pages/src_020_p114.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_020",
+        "source_title": "第九章 状态空间分析",
+        "chapter": "第九章",
+        "role": "lecture",
+        "page": 115,
+        "image": "assets/source_pages/src_020_p115.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_020",
+        "source_title": "第九章 状态空间分析",
+        "chapter": "第九章",
+        "role": "lecture",
+        "page": 116,
+        "image": "assets/source_pages/src_020_p116.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_020",
+        "source_title": "第九章 状态空间分析",
+        "chapter": "第九章",
+        "role": "lecture",
+        "page": 117,
+        "image": "assets/source_pages/src_020_p117.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_020",
+        "source_title": "第九章 状态空间分析",
+        "chapter": "第九章",
+        "role": "lecture",
+        "page": 118,
+        "image": "assets/source_pages/src_020_p118.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_020",
+        "source_title": "第九章 状态空间分析",
+        "chapter": "第九章",
+        "role": "lecture",
+        "page": 119,
+        "image": "assets/source_pages/src_020_p119.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_020",
+        "source_title": "第九章 状态空间分析",
+        "chapter": "第九章",
+        "role": "lecture",
+        "page": 120,
+        "image": "assets/source_pages/src_020_p120.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_020",
+        "source_title": "第九章 状态空间分析",
+        "chapter": "第九章",
+        "role": "lecture",
+        "page": 122,
+        "image": "assets/source_pages/src_020_p122.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_020",
+        "source_title": "第九章 状态空间分析",
+        "chapter": "第九章",
+        "role": "lecture",
+        "page": 124,
+        "image": "assets/source_pages/src_020_p124.png",
+        "important": false,
+        "double_important": false
+      },
+      {
+        "source_id": "src_020",
+        "source_title": "第九章 状态空间分析",
+        "chapter": "第九章",
+        "role": "lecture",
+        "page": 126,
+        "image": "assets/source_pages/src_020_p126.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_020",
+        "source_title": "第九章 状态空间分析",
+        "chapter": "第九章",
+        "role": "lecture",
+        "page": 127,
+        "image": "assets/source_pages/src_020_p127.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_020",
+        "source_title": "第九章 状态空间分析",
+        "chapter": "第九章",
+        "role": "lecture",
+        "page": 130,
+        "image": "assets/source_pages/src_020_p130.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_020",
+        "source_title": "第九章 状态空间分析",
+        "chapter": "第九章",
+        "role": "lecture",
+        "page": 131,
+        "image": "assets/source_pages/src_020_p131.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_020",
+        "source_title": "第九章 状态空间分析",
+        "chapter": "第九章",
+        "role": "lecture",
+        "page": 132,
+        "image": "assets/source_pages/src_020_p132.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_020",
+        "source_title": "第九章 状态空间分析",
+        "chapter": "第九章",
+        "role": "lecture",
+        "page": 133,
+        "image": "assets/source_pages/src_020_p133.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_020",
+        "source_title": "第九章 状态空间分析",
+        "chapter": "第九章",
+        "role": "lecture",
+        "page": 134,
+        "image": "assets/source_pages/src_020_p134.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_020",
+        "source_title": "第九章 状态空间分析",
+        "chapter": "第九章",
+        "role": "lecture",
+        "page": 135,
+        "image": "assets/source_pages/src_020_p135.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_020",
+        "source_title": "第九章 状态空间分析",
+        "chapter": "第九章",
+        "role": "lecture",
+        "page": 136,
+        "image": "assets/source_pages/src_020_p136.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_020",
+        "source_title": "第九章 状态空间分析",
+        "chapter": "第九章",
+        "role": "lecture",
+        "page": 137,
+        "image": "assets/source_pages/src_020_p137.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_020",
+        "source_title": "第九章 状态空间分析",
+        "chapter": "第九章",
+        "role": "lecture",
+        "page": 138,
+        "image": "assets/source_pages/src_020_p138.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_020",
+        "source_title": "第九章 状态空间分析",
+        "chapter": "第九章",
+        "role": "lecture",
+        "page": 140,
+        "image": "assets/source_pages/src_020_p140.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_020",
+        "source_title": "第九章 状态空间分析",
+        "chapter": "第九章",
+        "role": "lecture",
+        "page": 141,
+        "image": "assets/source_pages/src_020_p141.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_020",
+        "source_title": "第九章 状态空间分析",
+        "chapter": "第九章",
+        "role": "lecture",
+        "page": 148,
+        "image": "assets/source_pages/src_020_p148.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_020",
+        "source_title": "第九章 状态空间分析",
+        "chapter": "第九章",
+        "role": "lecture",
+        "page": 152,
+        "image": "assets/source_pages/src_020_p152.png",
+        "important": false,
+        "double_important": false
+      },
+      {
+        "source_id": "src_020",
+        "source_title": "第九章 状态空间分析",
+        "chapter": "第九章",
+        "role": "lecture",
+        "page": 154,
+        "image": "assets/source_pages/src_020_p154.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_020",
+        "source_title": "第九章 状态空间分析",
+        "chapter": "第九章",
+        "role": "lecture",
+        "page": 155,
+        "image": "assets/source_pages/src_020_p155.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_020",
+        "source_title": "第九章 状态空间分析",
+        "chapter": "第九章",
+        "role": "lecture",
+        "page": 160,
+        "image": "assets/source_pages/src_020_p160.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_020",
+        "source_title": "第九章 状态空间分析",
+        "chapter": "第九章",
+        "role": "lecture",
+        "page": 161,
+        "image": "assets/source_pages/src_020_p161.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_020",
+        "source_title": "第九章 状态空间分析",
+        "chapter": "第九章",
+        "role": "lecture",
+        "page": 162,
+        "image": "assets/source_pages/src_020_p162.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_020",
+        "source_title": "第九章 状态空间分析",
+        "chapter": "第九章",
+        "role": "lecture",
+        "page": 164,
+        "image": "assets/source_pages/src_020_p164.png",
+        "important": false,
+        "double_important": false
+      },
+      {
+        "source_id": "src_020",
+        "source_title": "第九章 状态空间分析",
+        "chapter": "第九章",
+        "role": "lecture",
+        "page": 165,
+        "image": "assets/source_pages/src_020_p165.png",
+        "important": true,
+        "double_important": false
+      },
+      {
+        "source_id": "src_020",
+        "source_title": "第九章 状态空间分析",
+        "chapter": "第九章",
+        "role": "lecture",
+        "page": 166,
+        "image": "assets/source_pages/src_020_p166.png",
+        "important": true,
+        "double_important": false
+      }
+    ],
+    "related_homework": []
+  }
+]

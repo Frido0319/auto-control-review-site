@@ -1,0 +1,194 @@
+﻿[
+    {
+        "id":  "src_001",
+        "safe_name":  "src_001.pdf",
+        "original_name":  "第1章 绪论new(1).pdf",
+        "original_relative":  "第1章 绪论new(1).pdf",
+        "extension":  ".pdf",
+        "length":  22812353
+    },
+    {
+        "id":  "src_002",
+        "safe_name":  "src_002.ppt",
+        "original_name":  "第三章 作业安排.ppt",
+        "original_relative":  "第三章 作业安排.ppt",
+        "extension":  ".ppt",
+        "length":  332288
+    },
+    {
+        "id":  "src_003",
+        "safe_name":  "src_003.ppt",
+        "original_name":  "15 c5_1 频率特性.ppt",
+        "original_relative":  "自控ppt\\15 c5_1 频率特性.ppt",
+        "extension":  ".ppt",
+        "length":  3983360
+    },
+    {
+        "id":  "src_004",
+        "safe_name":  "src_004.ppt",
+        "original_name":  "16_1 c5_2 典型环节的幅相特性曲线.ppt",
+        "original_relative":  "自控ppt\\16_1 c5_2 典型环节的幅相特性曲线.ppt",
+        "extension":  ".ppt",
+        "length":  6262272
+    },
+    {
+        "id":  "src_005",
+        "safe_name":  "src_005.ppt",
+        "original_name":  "16_2 c5_2 开环系统的幅相特性曲线.ppt",
+        "original_relative":  "自控ppt\\16_2 c5_2 开环系统的幅相特性曲线.ppt",
+        "extension":  ".ppt",
+        "length":  4725248
+    },
+    {
+        "id":  "src_006",
+        "safe_name":  "src_006.ppt",
+        "original_name":  "17_1 c5_2 对数频率特性_1 典型环节.ppt",
+        "original_relative":  "自控ppt\\17_1 c5_2 对数频率特性_1 典型环节.ppt",
+        "extension":  ".ppt",
+        "length":  5384704
+    },
+    {
+        "id":  "src_007",
+        "safe_name":  "src_007.ppt",
+        "original_name":  "17_2 c5_2 对数频率特性_2 开环系统.ppt",
+        "original_relative":  "自控ppt\\17_2 c5_2 对数频率特性_2 开环系统.ppt",
+        "extension":  ".ppt",
+        "length":  5038080
+    },
+    {
+        "id":  "src_008",
+        "safe_name":  "src_008.ppt",
+        "original_name":  "18 c5_3 频域稳定判据1 奈奎斯特稳定判据.ppt",
+        "original_relative":  "自控ppt\\18 c5_3 频域稳定判据1 奈奎斯特稳定判据.ppt",
+        "extension":  ".ppt",
+        "length":  6065152
+    },
+    {
+        "id":  "src_009",
+        "safe_name":  "src_009.ppt",
+        "original_name":  "19_1 c5_3 频域稳定判据2 对数频域稳定判据.ppt",
+        "original_relative":  "自控ppt\\19_1 c5_3 频域稳定判据2 对数频域稳定判据.ppt",
+        "extension":  ".ppt",
+        "length":  4639232
+    },
+    {
+        "id":  "src_010",
+        "safe_name":  "src_010.ppt",
+        "original_name":  "19_2 c5_4 频域稳定裕度.ppt",
+        "original_relative":  "自控ppt\\19_2 c5_4 频域稳定裕度.ppt",
+        "extension":  ".ppt",
+        "length":  4739072
+    },
+    {
+        "id":  "src_011",
+        "safe_name":  "src_011.ppt",
+        "original_name":  "20 c5_x 利用开环对数幅频特性分析系统的性能.ppt",
+        "original_relative":  "自控ppt\\20 c5_x 利用开环对数幅频特性分析系统的性能.ppt",
+        "extension":  ".ppt",
+        "length":  3134464
+    },
+    {
+        "id":  "src_012",
+        "safe_name":  "src_012.ppt",
+        "original_name":  "20_2 c5_5 闭环系统的频域性能指标.ppt",
+        "original_relative":  "自控ppt\\20_2 c5_5 闭环系统的频域性能指标.ppt",
+        "extension":  ".ppt",
+        "length":  3928064
+    },
+    {
+        "id":  "src_013",
+        "safe_name":  "src_013.ppt",
+        "original_name":  "21 c6 线性系统的校正_超前校正.ppt",
+        "original_relative":  "自控ppt\\21 c6 线性系统的校正_超前校正.ppt",
+        "extension":  ".ppt",
+        "length":  5537280
+    },
+    {
+        "id":  "src_014",
+        "safe_name":  "src_014.ppt",
+        "original_name":  "22 c6 线性系统的校正_滞后校正.ppt",
+        "original_relative":  "自控ppt\\22 c6 线性系统的校正_滞后校正.ppt",
+        "extension":  ".ppt",
+        "length":  4956672
+    },
+    {
+        "id":  "src_015",
+        "safe_name":  "src_015.ppt",
+        "original_name":  "24 总复习课.ppt",
+        "original_relative":  "自控ppt\\24 总复习课.ppt",
+        "extension":  ".ppt",
+        "length":  4114944
+    },
+    {
+        "id":  "src_016",
+        "safe_name":  "src_016.pdf",
+        "original_name":  "第1章 绪论new.pdf",
+        "original_relative":  "自控ppt\\第1章 绪论new.pdf",
+        "extension":  ".pdf",
+        "length":  22812353
+    },
+    {
+        "id":  "src_017",
+        "safe_name":  "src_017.pdf",
+        "original_name":  "第2章（全部）.pdf",
+        "original_relative":  "自控ppt\\第2章（全部）.pdf",
+        "extension":  ".pdf",
+        "length":  3170244
+    },
+    {
+        "id":  "src_018",
+        "safe_name":  "src_018.pdf",
+        "original_name":  "第3章.pdf",
+        "original_relative":  "自控ppt\\第3章.pdf",
+        "extension":  ".pdf",
+        "length":  3938279
+    },
+    {
+        "id":  "src_019",
+        "safe_name":  "src_019.ppt",
+        "original_name":  "第八章_自动控制.ppt",
+        "original_relative":  "自控ppt\\第八章_自动控制.ppt",
+        "extension":  ".ppt",
+        "length":  2020864
+    },
+    {
+        "id":  "src_020",
+        "safe_name":  "src_020.ppt",
+        "original_name":  "第九章_自动控制.ppt",
+        "original_relative":  "自控ppt\\第九章_自动控制.ppt",
+        "extension":  ".ppt",
+        "length":  6187520
+    },
+    {
+        "id":  "src_021",
+        "safe_name":  "src_021.ppt",
+        "original_name":  "第三章 作业安排.ppt",
+        "original_relative":  "自控ppt\\第三章 作业安排.ppt",
+        "extension":  ".ppt",
+        "length":  332288
+    },
+    {
+        "id":  "src_022",
+        "safe_name":  "src_022.ppt",
+        "original_name":  "作业安排(1).ppt",
+        "original_relative":  "自控ppt\\作业安排(1).ppt",
+        "extension":  ".ppt",
+        "length":  422400
+    },
+    {
+        "id":  "src_023",
+        "safe_name":  "src_023.pdf",
+        "original_name":  "自控第三章(1).pdf",
+        "original_relative":  "自控第三章(1).pdf",
+        "extension":  ".pdf",
+        "length":  1301661
+    },
+    {
+        "id":  "src_024",
+        "safe_name":  "src_024.ppt",
+        "original_name":  "作业安排(1).ppt",
+        "original_relative":  "作业安排(1).ppt",
+        "extension":  ".ppt",
+        "length":  422400
+    }
+]

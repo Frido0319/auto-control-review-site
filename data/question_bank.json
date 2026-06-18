@@ -1,0 +1,293 @@
+[
+  {
+    "id": "HW1",
+    "chapter": "第一章 绪论",
+    "title": "第一章绪论",
+    "prompt": "作业安排页标注：第一章绪论，无。",
+    "prompt_images": [
+      "assets/homework_pages/src_024_p001.png"
+    ],
+    "knowledge_ids": [
+      "k1_intro"
+    ],
+    "answer_status": "无作业",
+    "answer_images": [],
+    "answer_text": "第一章没有布置书面作业；复习时掌握闭环控制基本概念、系统组成和性能指标即可。"
+  },
+  {
+    "id": "HW2-2",
+    "chapter": "第二章 数学模型",
+    "title": "《孔》P39 2-2：求 Laplace 变换",
+    "prompt": "作业安排要求完成 2-2 的 (1)、(3)、(5)、(7)，其中页面给出部分函数示例。",
+    "prompt_images": [
+      "assets/homework_pages/src_024_p002.png",
+      "assets/homework_pages/src_024_p003.png"
+    ],
+    "knowledge_ids": [
+      "k2_laplace"
+    ],
+    "answer_status": "待官方答案核对",
+    "answer_images": [],
+    "answer_text": "按常见函数表、线性性质和 s 域平移性质逐题计算。建议先写出对应公式，再代入参数；不要把 e^{-a t} 的平移方向写反。"
+  },
+  {
+    "id": "HW2-6",
+    "chapter": "第二章 数学模型",
+    "title": "《孔》P39 2-6：求 Laplace 反变换",
+    "prompt": "作业安排要求完成 2-6 的 (1)、(3)、(5)、(7)。",
+    "prompt_images": [
+      "assets/homework_pages/src_024_p002.png",
+      "assets/homework_pages/src_024_p003.png",
+      "assets/homework_pages/src_024_p004.png"
+    ],
+    "knowledge_ids": [
+      "k2_laplace"
+    ],
+    "answer_status": "待官方答案核对",
+    "answer_images": [],
+    "answer_text": "先做部分分式展开；若出现不可约二阶项，配成 (s+a)^2 + w^2，再对应衰减正弦或余弦项。"
+  },
+  {
+    "id": "HW2-7",
+    "chapter": "第二章 数学模型",
+    "title": "《胡》P78 2-7：由传递函数和初始条件求阶跃响应",
+    "prompt": "题面给出传递函数、初始条件和单位阶跃输入，要求输出响应 c(t)。",
+    "prompt_images": [
+      "assets/homework_pages/src_024_p002.png",
+      "assets/homework_pages/src_024_p003.png",
+      "assets/homework_pages/src_024_p004.png"
+    ],
+    "knowledge_ids": [
+      "k2_laplace",
+      "k2_transfer"
+    ],
+    "answer_status": "待官方答案核对",
+    "answer_images": [],
+    "answer_text": "解题路线：写出 C(s)=G(s)R(s)，把初始条件带入由微分方程得到的 s 域表达式，做部分分式展开后反变换得到 c(t)。"
+  },
+  {
+    "id": "HW2-8",
+    "chapter": "第二章 数学模型",
+    "title": "《胡》P78 2-8：系统数学模型与响应",
+    "prompt": "作业安排页列为第二章作业内容，具体题面见截图。",
+    "prompt_images": [
+      "assets/homework_pages/src_024_p004.png",
+      "assets/homework_pages/src_024_p005.png"
+    ],
+    "knowledge_ids": [
+      "k2_transfer"
+    ],
+    "answer_status": "待官方答案核对",
+    "answer_images": [],
+    "answer_text": "先从物理或框图关系建立输入输出方程，再通过 Laplace 变换得到传递函数或响应。"
+  },
+  {
+    "id": "HW2-11",
+    "chapter": "第二章 数学模型",
+    "title": "《胡》P79 2-11：结构图/传递函数",
+    "prompt": "作业安排要求完成 2-11。重点通常是从结构图或连接关系化简得到传递函数。",
+    "prompt_images": [
+      "assets/homework_pages/src_024_p005.png",
+      "assets/homework_pages/src_024_p006.png"
+    ],
+    "knowledge_ids": [
+      "k2_transfer"
+    ],
+    "answer_status": "待官方答案核对",
+    "answer_images": [],
+    "answer_text": "从最内层反馈开始化简，串联相乘、并联相加、反馈用 G/(1±GH)。每一步都保留符号，最后再合并。"
+  },
+  {
+    "id": "HW2-12",
+    "chapter": "第二章 数学模型",
+    "title": "《孔》P46 2-12：结构图化简",
+    "prompt": "作业安排要求完成 2-12。题目与结构图等效变换相关。",
+    "prompt_images": [
+      "assets/homework_pages/src_024_p005.png",
+      "assets/homework_pages/src_024_p006.png"
+    ],
+    "knowledge_ids": [
+      "k2_transfer"
+    ],
+    "answer_status": "待官方答案核对",
+    "answer_images": [],
+    "answer_text": "建议在草稿上标出每个比较点与引出点移动后的等效增益，避免跨越方框移动时漏乘或漏除传递函数。"
+  },
+  {
+    "id": "HW2-14",
+    "chapter": "第二章 数学模型",
+    "title": "《孔》P48 2-14：信号流图与梅逊公式",
+    "prompt": "作业安排要求完成 2-14。重点是用信号流图或梅逊公式求总传递函数。",
+    "prompt_images": [
+      "assets/homework_pages/src_024_p006.png"
+    ],
+    "knowledge_ids": [
+      "k2_transfer"
+    ],
+    "answer_status": "待官方答案核对",
+    "answer_images": [],
+    "answer_text": "列出所有前向通路、单独回路和互不接触回路，计算 Delta 和各 Delta_k，再代入梅逊公式。"
+  },
+  {
+    "id": "HW3-1",
+    "chapter": "第三章 时域分析",
+    "title": "3.1 由二阶系统单位阶跃响应求超调量、峰值时间、调节时间",
+    "prompt": "已知二阶系统单位阶跃响应，求超调量、峰值时间和调节时间。",
+    "prompt_images": [
+      "assets/homework_pages/src_021_p001.png"
+    ],
+    "knowledge_ids": [
+      "k3_first_second_order"
+    ],
+    "answer_status": "第三章参考答案",
+    "answer_images": [
+      "assets/answer_pages/src_023_p001.png"
+    ],
+    "answer_text": "从响应式读出衰减指数和阻尼振荡频率，先求 zeta wn 和 wd，再由 wd = wn sqrt(1-zeta^2) 得到 wn、zeta，最后代入超调量、峰值时间和调节时间公式。"
+  },
+  {
+    "id": "HW3-2",
+    "chapter": "第三章 时域分析",
+    "title": "3.2 求系统自然频率和阻尼比",
+    "prompt": "题目要求由给定系统求自然频率 wn 和阻尼比 zeta。",
+    "prompt_images": [
+      "assets/homework_pages/src_021_p001.png"
+    ],
+    "knowledge_ids": [
+      "k3_first_second_order"
+    ],
+    "answer_status": "第三章参考答案",
+    "answer_images": [
+      "assets/answer_pages/src_023_p001.png"
+    ],
+    "answer_text": "把闭环传递函数分母化为 s^2 + 2 zeta wn s + wn^2 的标准形式，对比系数即可。"
+  },
+  {
+    "id": "HW3-3",
+    "chapter": "第三章 时域分析",
+    "title": "3.3 图示控制系统综合指标计算",
+    "prompt": "已知 K=125，要求系统阶次、类型、开环/闭环传递函数、零极点、自然频率、阻尼比、阻尼振荡频率、调节时间、最大超调量、静态误差系数和给定输入下的稳态误差。",
+    "prompt_images": [
+      "assets/homework_pages/src_021_p002.png"
+    ],
+    "knowledge_ids": [
+      "k2_transfer",
+      "k3_first_second_order",
+      "k3_stability_error"
+    ],
+    "answer_status": "第三章参考答案",
+    "answer_images": [
+      "assets/answer_pages/src_023_p001.png",
+      "assets/answer_pages/src_023_p002.png"
+    ],
+    "answer_text": "先由框图写开环 G(s)H(s)，再用 1+G(s)H(s)=0 得闭环特征方程。阶次看闭环分母最高次数，型别看开环原点极点个数；动态指标由二阶标准型读出，稳态误差由误差系数求。"
+  },
+  {
+    "id": "HW3-4",
+    "chapter": "第三章 时域分析",
+    "title": "3.4 由系统结构求稳定性或性能指标",
+    "prompt": "第三章作业后续题，题面见作业截图。",
+    "prompt_images": [
+      "assets/homework_pages/src_021_p003.png"
+    ],
+    "knowledge_ids": [
+      "k3_stability_error"
+    ],
+    "answer_status": "第三章参考答案",
+    "answer_images": [
+      "assets/answer_pages/src_023_p002.png",
+      "assets/answer_pages/src_023_p003.png"
+    ],
+    "answer_text": "优先写闭环特征方程，再根据题目要求判断稳定性、求动态指标或稳态误差。"
+  },
+  {
+    "id": "HW3-5",
+    "chapter": "第三章 时域分析",
+    "title": "3.5 第三章时域分析题",
+    "prompt": "题面见第三章作业截图。",
+    "prompt_images": [
+      "assets/homework_pages/src_021_p003.png"
+    ],
+    "knowledge_ids": [
+      "k3_first_second_order",
+      "k3_stability_error"
+    ],
+    "answer_status": "第三章参考答案",
+    "answer_images": [
+      "assets/answer_pages/src_023_p002.png",
+      "assets/answer_pages/src_023_p003.png"
+    ],
+    "answer_text": "题目属于第三章核心训练，按“建闭环模型 -> 化标准型/列劳斯表 -> 求指标或误差”的顺序处理。"
+  },
+  {
+    "id": "HW3-6",
+    "chapter": "第三章 时域分析",
+    "title": "3.6 稳定性与参数范围",
+    "prompt": "题面见第三章作业截图。",
+    "prompt_images": [
+      "assets/homework_pages/src_021_p004.png"
+    ],
+    "knowledge_ids": [
+      "k3_stability_error"
+    ],
+    "answer_status": "第三章参考答案",
+    "answer_images": [
+      "assets/answer_pages/src_023_p002.png",
+      "assets/answer_pages/src_023_p003.png"
+    ],
+    "answer_text": "如果题目含未知参数，建立特征方程后列劳斯表，让首列元素同号得到参数范围。"
+  },
+  {
+    "id": "HW3-7",
+    "chapter": "第三章 时域分析",
+    "title": "3.7 稳态误差计算",
+    "prompt": "题面见第三章作业截图。",
+    "prompt_images": [
+      "assets/homework_pages/src_021_p004.png"
+    ],
+    "knowledge_ids": [
+      "k3_stability_error"
+    ],
+    "answer_status": "第三章参考答案",
+    "answer_images": [
+      "assets/answer_pages/src_023_p002.png",
+      "assets/answer_pages/src_023_p003.png"
+    ],
+    "answer_text": "先判断输入类型和系统型别，再选 Kp、Kv 或 Ka；也可以从 E(s) 使用终值定理直接计算。"
+  },
+  {
+    "id": "HW3-8",
+    "chapter": "第三章 时域分析",
+    "title": "3.8 第三章综合题",
+    "prompt": "题面见第三章作业截图。",
+    "prompt_images": [
+      "assets/homework_pages/src_021_p005.png"
+    ],
+    "knowledge_ids": [
+      "k3_first_second_order",
+      "k3_stability_error"
+    ],
+    "answer_status": "第三章参考答案",
+    "answer_images": [
+      "assets/answer_pages/src_023_p003.png"
+    ],
+    "answer_text": "综合题通常同时考模型、稳定性和误差。建议每问单独列公式，避免把中间结果挤在一行里。"
+  },
+  {
+    "id": "HW3-9",
+    "chapter": "第三章 时域分析",
+    "title": "3.9 第三章综合题",
+    "prompt": "题面见第三章作业截图。",
+    "prompt_images": [
+      "assets/homework_pages/src_021_p005.png"
+    ],
+    "knowledge_ids": [
+      "k3_stability_error"
+    ],
+    "answer_status": "第三章参考答案",
+    "answer_images": [
+      "assets/answer_pages/src_023_p003.png"
+    ],
+    "answer_text": "先确认闭环是否稳定；只有稳定时终值定理计算的稳态误差才有意义。"
+  }
+]

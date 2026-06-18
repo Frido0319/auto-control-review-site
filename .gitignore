@@ -1,0 +1,7 @@
+raw_sources/
+tmp/
+source_text/
+assets/source_pdfs/
+__pycache__/
+.pytest_cache/
+*.pyc
