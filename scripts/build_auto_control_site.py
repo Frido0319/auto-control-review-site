@@ -1229,7 +1229,7 @@ def render_html(knowledge: list[dict[str, Any]], questions: list[dict[str, Any]]
         searchInput.value = '';
         applySearch();
       }}
-      requestAnimationFrame(() => target.scrollIntoView({{ block: 'start', behavior: 'smooth' }}));
+      target.scrollIntoView({{ block: 'start', behavior: 'smooth' }});
     }}
     searchInput.addEventListener('input', applySearch);
     clearSearch.addEventListener('click', () => {{ searchInput.value = ''; applySearch(); }});
